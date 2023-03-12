@@ -1,0 +1,8 @@
+#ifndef EMC_TEST_cmakeConfigure_H
+#define EMC_TEST_cmakeConfigure_H
+
+#cmakedefine01 EMC_TEST_WRAPPER_CUNIT
+#cmakedefine01 EMC_TEST_WRAPPER_CHECK
+#cmakedefine01 EMC_TEST_WRAPPER_SIMPLE
+
+#endif

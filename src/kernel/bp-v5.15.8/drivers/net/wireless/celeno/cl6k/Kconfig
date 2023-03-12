@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause
+config CL6K
+	tristate "Celeno CL6K WLAN support"
+	depends on m
+	depends on MAC80211
+	help
+	  This option enables support for Celeno CL6K WLAN.
+	  Select M (recommended), if you have a wireless module.
+

@@ -1,0 +1,12 @@
+ce_tcv_enabled=1,0
+ce_country_code=US
+ce_production_mode=0
+ce_ela_mode=default
+ce_iface_eth=eth0
+ha_upnp_iface=br0
+ce_debug_level=1
+ci_phy_dev=0
+ci_dma_lli_max_chan=6,3
+ci_scale_down_fw=1
+ce_rst_gpio=463
+ce_bridge_en=1

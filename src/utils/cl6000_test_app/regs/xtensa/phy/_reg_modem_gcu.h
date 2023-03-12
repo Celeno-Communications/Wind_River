@@ -1,0 +1,6 @@
+#ifndef __REG_MODEM_GCU_H_
+#define __REG_MODEM_GCU_H_
+
+#define REG_MODEM_GCU_BASE_ADDR 0x604A0000
+
+#endif //__REG_MODEM_GCU_H_

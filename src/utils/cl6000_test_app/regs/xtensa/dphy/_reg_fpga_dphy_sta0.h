@@ -1,0 +1,6 @@
+#ifndef __REG_FPGA_DPHY_STA0_H_
+#define __REG_FPGA_DPHY_STA0_H_
+
+#define REG_FPGA_DPHY_STA0_BASE_ADDR 0x60640800
+
+#endif //__REG_FPGA_DPHY_STA0_H_

@@ -1,0 +1,11 @@
+if(EMC_TEST_WRAPPER STREQUAL "CUNIT")
+  add_executable ( EmcStdWcharTest EmcStdWcharTest.c )
+  target_link_libraries ( EmcStdWcharTest PRIVATE emc_std emc_test cunit )
+  eme_add_test(EmcStdWcharTest)
+endif()
+
+if(EMC_TEST_NATIVE_SIMPLE)
+  add_executable( EmcErrnoTest EmcErrnoTest.c )
+  target_link_libraries( EmcErrnoTest PRIVATE emc_std emc_test)
+  eme_add_test(EmcErrnoTest)
+endif()

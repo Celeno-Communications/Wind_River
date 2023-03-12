@@ -1,0 +1,145 @@
+#!/bin/sh
+
+# Utility to poke in the debugfs.
+
+chip_idx=$1
+shift
+tcv_idx=$1
+shift
+
+source /var/run/cl6k_chip${chip_idx}.ini
+
+wlan_idx=$(($chip_idx*2+$tcv_idx))
+BASEPATH="/sys/kernel/debug/ieee80211/chip${chip_idx}/cl"
+
+usage() {
+    echo  "-----------------------------------------------------"
+    echo  "#  Usage:"
+    echo  "#  debugfsh <CHIP> <TCV> <FILE> <values..>"
+    echo  "#  CHIP = 0 / 1"
+    echo  "#  TCV  = 0 (lmac) / 1 (smac)"
+    echo  "#  FILE = stat_print , mactrace, fixed_rate etc."
+    echo -e "#\n#  example: ' debugfsh 0 0 stat_print 0x40' " 
+    echo  "-----------------------------------------------------"
+    exit 1
+}
+
+die() { 
+  echo >&2 $*
+  exit 1
+}
+
+vecho() { local foo; }
+
+DMESG_TAIL=0
+DMESG_DUMP=0
+CLEAR_DMESG_BEFORE=0
+GET=0
+
+[ "$1" == "--help" ] && usage
+
+[ "$1" == "--ls" -o "$1" == "ls" ] && {
+  find $BASEPATH/diags $BASEPATH/cl6k -type f -name \*$2\*
+  exit 2
+}
+
+while getopts 'vdch' OPTION
+do
+    case $OPTION in
+        d)
+           DMESG_TAIL=1
+           ;;
+        c)
+           CLEAR_DMESG_BEFORE=1
+           DMESG_DUMP=1
+           ;;
+        h)
+            usage
+           ;;
+        v)  vecho() { echo $*; }
+           ;;
+        \:)  die "Argument missing from -$OPTARG option"
+           ;;
+        \?)  die "Unknown option: $OPTARG. Try --help"
+           ;;
+    esac
+done >&2
+
+shift $(($OPTIND - 1))
+[ $# -lt 1 ] && die "Required arg missing. Try --help or ls to list all debugfs files."
+FILE=$1
+shift
+
+[ "$FILE" = "help" ] && usage
+
+[ "$FILE" = "get" ] && {
+  GET=1
+  FILE=$1
+  shift
+}
+
+[ -z "$FILE" ] && die "Required arg missing" 
+
+WRITEARGS="$*"
+FSPATH=""
+
+# Check for 'synthetic' names ... Ignore case, convert all _ to -.
+FILE_S=`echo ${FILE//_/-} | awk '{print tolower($0)}'`
+case "$FILE_S" in
+  force-assert|force-trigger)
+    FILE="mactrace"
+    WRITEARGS="1"
+   ;;
+  print-on-trigger)
+    FILE="test_mode"
+    [ "$GET" -eq 0 -a "$WRITEARGS" = "0" ] && WRITEARGS=0x06
+    [ "$GET" -eq 0 -a "$WRITEARGS" = "1" ] && WRITEARGS=0x46
+    ;;
+  ela-catchup|ela-catch-up)
+    FILE=trigpoint
+    WRITEARGS=0x1003
+    ;;
+  ela-off)
+    FILE=trigpoint
+    WRITEARGS=0x1000
+    ;;
+  ela-restart)
+    FILE=trigpoint
+    WRITEARGS=0x2000
+    ;;
+ recoverycount|RecoveryCount)
+   FILE=RecoveryCount
+   FSPATH=/sys/module/cl6k/parameters/$FILE
+   GET=1
+   ;;
+esac
+
+[ "$GET" -eq 0 -a -z "$WRITEARGS" ] && die "Write args missing"
+
+vecho BASEPATH $BASEPATH
+vecho FILE $FILE
+vecho WRITEARGS \"$WRITEARGS\"
+vecho GET $GET DMESG_TAIL $DMESG_TAIL DMESG_DUMP $DMESG_DUMP CLEAR_DMESG_BEFORE $CLEAR_DMESG_BEFORE
+
+[ -d $BASEPATH ] || die "OOPS. Debugfs path not found." 
+
+[ -z $FSPATH ] && FSPATH=$BASEPATH/cl6k/$FILE
+[ -f $FSPATH ] || FSPATH=$BASEPATH/diags/$FILE
+[ -f $FSPATH ] || die "No such file in cl6k debugfs: $FILE" 
+
+vecho $FSPATH
+
+[ "$CLEAR_DMESG_BEFORE" -ne 0 ] && dmesg -c >/dev/null
+
+if [ "$GET" -eq 0 ] ; then
+  echo "$WRITEARGS" > $FSPATH || die "ERROR writing to $FSPATH"
+else
+  cat $FSPATH || die "ERROR reading from $FSPATH"
+fi
+
+[ "$DMESG_TAIL" -ne 0 ] && dmesg|tail -n15
+
+[ "$DMESG_DUMP" -ne 0 ] && dmesg
+
+exit 0
+

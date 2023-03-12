@@ -1,0 +1,53 @@
+eme_add_prerequisites(
+  emcpp_system_celeno_wifi
+  emc_vendor_celeno
+  emc_usb_vendor_celeno_cli
+  emc_usb_vendor_celeno_wifi
+  emc_usb_class_bluetooth
+  emc_usb_class_cdc_ecm
+  emc_usb_class_cdc_ncm
+  emc_usb_driver_arch
+  emcpp_hw
+  emc_hw
+  emc_log
+  emcpp_test
+)
+
+set(EMCPP_LOG_LEVEL "Trace" CACHE STRING "")
+
+set(EMC_LOG_LEVEL "TRACE" CACHE STRING "")
+
+#set(EMC_LOG "EMCPP" CACHE STRING "")
+set(EMC_LOG "INTERNAL" CACHE STRING "")
+set(EMC_LOG_INTERNAL_INSTANCES  "64" CACHE STRING "")
+
+set(EMC_LOG_INTERNAL_APPENDER_PRINTF_INSTANCES "1" CACHE STRING "")
+set(EMC_LOG_INTERNAL_MEMORY_SIZE "8 * 1024" CACHE STRING "")
+set(EMC_LOG_INTERNAL_APPENDER_MEMORY_INSTANCES "1" CACHE STRING "")
+set(EMC_LOG_INTERNAL_BUFFERED_TRANSPORT_SIZE "8 * 1024" CACHE STRING "")
+set(EMC_LOG_INTERNAL_APPENDER_BUFFERED_TRANSPORT_INSTANCES "1" CACHE STRING "")
+option(EMC_LOG_INTERNAL_USES_FILE "" TRUE)
+option(EMC_LOG_INTERNAL_USES_TIMESTAMP "" TRUE)
+option(EMC_USB_DRIVER_EP_CONTINUOUS_CHANNEL_SUPPORTED "" TRUE)
+#option(EMC_LOG_USES_HASH "" TRUE)
+
+set(EMC_STD_MUTEX "null" CACHE STRING "")
+set(EMC_STD_TIMESTAMP "std" CACHE STRING "")
+
+option(EMCPP_TEST "" TRUE)
+option(EMC_TEST "" TRUE)
+#option(EMC_PRINT "" TRUE)
+
+#set(EMC_HW_PHYSICAL_ADDRESS_MAP "EXTERN" CACHE STRING "" FORCE)
+
+set(EMC_VENDOR_CELENO_USB_IF_COUNT 4 CACHE STRING "")
+option(EMC_USB_DRIVER_EP_SHARED_BUFFER_SUPPORTED "" TRUE)
+include("emcpp_system_celeno_wifi/eme/usb_dev.cmake")
+
+option(EMC_USB_ROLE_HOST "" TRUE)
+
+set(EMC_USB_DEVICE_HAL_MAX_EP "32" CACHE STRING "")
+set(EMC_USB_DRIVER_DWC3_MAX_ENDPOINT_DRIVER ${EMC_USB_DEVICE_HAL_MAX_EP} CACHE STRING "")
+option(EMC_USB_VENDOR_CELENO_USBW_US_FLUSH_HOST_OPTIM "" ON)
+
+#option(EMC_USB_CLASS_BLUETOOTH_SCO_EP_INT "USB Transfer Type for SCO EPs" ON)

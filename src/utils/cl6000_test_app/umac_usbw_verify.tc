@@ -1,0 +1,14 @@
+#A/cl6000_boot_A -u -f tc_umac_usbw_verify.tc -p. load_test udmatestfw.bin usbwrapperfw.bin no_load
+U00-CONT-V  
+U01-SPKT-MUX-V
+U02-SPKT-V    
+U03-SPKT-V  
+U04-SPKT-MUX-V
+U05-CONT-V    
+D00-AGR-V     
+D01-AGR-V     
+D02-AGR-V     
+D03-AGR-V     
+D04-AGR-V
+D05-AGR-V    
+D06-SPK-V

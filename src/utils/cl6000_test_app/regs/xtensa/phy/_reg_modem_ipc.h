@@ -1,0 +1,6 @@
+#ifndef __REG_MODEM_IPC_H_
+#define __REG_MODEM_IPC_H_
+
+#define REG_MODEM_IPC_BASE_ADDR 0x604A1800
+
+#endif //__REG_MODEM_IPC_H_

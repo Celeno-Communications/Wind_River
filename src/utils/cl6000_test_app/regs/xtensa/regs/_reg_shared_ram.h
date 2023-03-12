@@ -1,0 +1,6 @@
+#ifndef __REG_SHARED_RAM_H_
+#define __REG_SHARED_RAM_H_
+
+#define REG_SHARED_RAM_BASE_ADDR 0x60000000
+
+#endif //__REG_SHARED_RAM_H_

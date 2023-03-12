@@ -1,0 +1,1231 @@
+<<<<<<< HEAD
+WIFI_MODE_FSM_VERSION 30
+=======
+WIFI_MODE_FSM_VERSION 25
+>>>>>>> b1db6ebce ([FW] CL6000-00: FSM support for production tests)
+
+//SHEET:(3w->4w)[WIFIBTOFF2WIFISTANDBY_SIZE]
+#6   SX0_PLL_CTRL2.SX0_bgren                            Write reset Mode:nan
+#7   SX1_PLL_CTRL2.SX1_bgren                            Write reset Mode:nan
+#8   Delay  
+#9   SX0_PLL_CTRL2.SX0_bgren                            Write 1 Mode:BGR0_EN,BGR0_BGR1_EN
+#10  SX1_PLL_CTRL2.SX1_bgren                            Write 1 Mode:BGR1_EN,BGR0_BGR1_EN
+#11  Delay  
+
+//SHEET:(4w->5w)[WIFISTANDBY2WF_IDLE_SIZE]
+#6   SX0_LOGEN_CTRL0.SX0_logen_ldo_en                   Write 0x1 Mode:nan
+#7   SX0_LOGEN_CTRL0.SX0_lobuff_ldo_en                  Write 0x1 Mode:nan
+#8   SX1_LOGEN_CTRL0.SX1_logen_ldo_en                   Write 0x1 Mode:nan
+#9   SX1_LOGEN_CTRL0.SX1_lobuff_ldo_en                  Write 0x1 Mode:nan
+#10  SX0_LOGEN_CTRL0.SX0_losync_ldo_en                  Write 0x1 Mode:nan
+#11  Delay  
+#12  SX1_LOGEN_CTRL0.SX1_lobuff_rep_drv_CH1_LOX0_en     Write 0x1 Mode:nan
+#13  SX1_LOGEN_CTRL0.SX1_lobuff_ldo_en                  Write 0x1 Mode:nan
+#14  CH0_GEN_CTRL0.CH0_bb_bias_en                       Write 0x1 Mode:nan
+#15  CH1_GEN_CTRL0.CH1_bb_bias_en                       Write 0x1 Mode:nan
+#16  Delay  
+#17  CH0_ADC_CONF.CH0_adc_ldo_en                        Write 0x1 Mode:nan
+#18  CH1_ADC_CONF.CH1_adc_ldo_en                        Write 0x1 Mode:nan
+#19  CH0_GEN_CTRL1.CH0_dac_ldo_en                       Write 0x1 Mode:nan
+#20  CH1_GEN_CTRL1.CH1_dac_ldo_en                       Write 0x1 Mode:nan
+#21  CH0_GEN_CTRL1.CH0_localdiv_ldo_en                  Write 0x1 Mode:nan
+#22  CH1_GEN_CTRL1.CH1_localdiv_ldo_en                  Write 0x1 Mode:nan
+#23  CH0_GEN_CTRL2.CH0_bb_en                            Write 0x1 Mode:nan
+#24  CH1_GEN_CTRL2.CH1_bb_en                            Write 0x1 Mode:nan
+#25  RF_FEM0_LNA_CTRL0.CH0_rx_lna_st1_ldo10_en          Write 0x1 Mode:nan
+#26  RF_FEM0_LNA_CTRL0.CH0_rx_lna_st1_ldo14_en          Write 0x1 Mode:nan
+#27  RF_FEM0_LNA_ST2_CTRL0.CH0_rx_lna_st2_ldo10_en      Write 0x1 Mode:nan
+#28  RF_FEM0_LNA_ST2_CTRL0.CH0_rx_lna_st2_ldo14_en      Write 0x1 Mode:nan
+#29  RF_FEM1_LNA_CTRL0.CH1_rx_lna_st1_ldo10_en          Write 0x1 Mode:nan
+#30  RF_FEM1_LNA_CTRL0.CH1_rx_lna_st1_ldo14_en          Write 0x1 Mode:nan
+#31  RF_FEM1_LNA_ST2_CTRL0.CH1_rx_lna_st2_ldo10_en      Write 0x1 Mode:nan
+#32  RF_FEM1_LNA_ST2_CTRL0.CH1_rx_lna_st2_ldo14_en      Write 0x1 Mode:nan
+#33  CH0_GEN_CTRL2.CH0_pdet_ldo_en                      Write 0x1 Mode:nan
+#34  CH1_GEN_CTRL2.CH1_pdet_ldo_en                      Write 0x1 Mode:nan
+#35  AUX_ADC_CTRL0.ADC_aux_ldo_en                       Write 0x1 Mode:nan
+#36  Delay  
+#37  BT_BBIQ.BT_bb_bias_en                              Write 0x1 Mode:nan
+#38  Delay  
+#39  BT_ADC_STATIC_CONF.BT_adc_bias_en                  Write 0x1 Mode:nan
+#40  Delay  
+#41  BT_ADC_STATIC_CONF.BT_adc_ldo_en                   Write 0x1 Mode:nan
+#42  Delay  
+#43  SX1_FSM_CTRL0.SX1_fsm_rstn                         Write 0x0 Mode:nan
+#44  SX1_FSM_CTRL0.SX1_fsm_rstn                         Write 0x1 Mode:nan
+#45  SX1_PLL_CTRL0.SX1_fsm_en                           Write 0x1 Mode:nan
+#46  SX1_FSM_CTRL1.SX1_fsm_power_on_seq_start           Write 0x1 Mode:nan
+#47  Delay  
+#48  SX0_FSM_CTRL0.SX0_fsm_rstn                         Write 0x0 Mode:nan
+#49  SX0_FSM_CTRL0.SX0_fsm_rstn                         Write 0x1 Mode:nan
+#50  SX0_PLL_CTRL0.SX0_fsm_en                           Write 0x1 Mode:nan
+#51  SX0_FSM_CTRL1.SX0_fsm_power_on_seq_start           Write 0x1 Mode:nan
+#52  Delay  
+
+//SHEET:(5w->6w)[WF_IDLE2WF_CHAINCONFIG_SIZE]
+#4   DPLL_OUTDIV_CTRL0.dpll_dac_clk_div_sel             Write Ext Mode:nan
+#5   DPLL_OUTDIV_CTRL0.dpll_adc_clk_div2_sel            Write 0x1 Mode:nan
+#6   DPLL_OUTDIV_CTRL0.dpll_clk_div_rstn                Write 0x0 Mode:nan
+#7   DPLL_OUTDIV_CTRL0.dpll_clk_div_rstn                Write 0x1 Mode:nan
+#8   DPLL_OUTDIV_CTRL0.dpll_adc_clkout_drv_en           Write 0x1 Mode:nan
+#9   DPLL_OUTDIV_CTRL0.dpll_dac_clkout_drv_en           Write 0x1 Mode:nan
+#10  DPLL_OUTDIV_CTRL0.dpll_bt_aux_clk_drv_en           Write 0x1 Mode:nan
+#11  DPLL_OUTDIV_CTRL0.dpll_ch0_adc_clk_drv_en          Write 0x1 Mode:nan
+#12  DPLL_OUTDIV_CTRL0.dpll_ch1_adc_clk_drv_en          Write 0x1 Mode:nan
+#13  DPLL_OUTDIV_CTRL0.dpll_ch0_dac_clk_drv_en          Write 0x1 Mode:nan
+#14  DPLL_OUTDIV_CTRL0.dpll_ch1_dac_clk_drv_en          Write 0x1 Mode:nan
+#15  BT_ADC_STATIC_CONF.BT_adc_divider_en               Write 0x1 Mode:nan
+#16  BT_CHANNEL_CONF.BT_adc_neg_bias_clk_en             Write 0x1 Mode:nan
+#17  CH0_RSSI_CONF.CH0_adc_lpbk_spare                   Write 0x8 Mode:nan
+#18  CH1_RSSI_CONF.CH1_adc_lpbk_spare                   Write 0x8 Mode:nan
+#19  BT_ADC_STATIC_CONF.BT_aux_adc_clk_buf_en           Write 0x1 Mode:nan
+#20  AUX_ADC_CTRL0.AUX_adc_clk_64M_disable              Write 0x0 Mode:nan
+#21  AUX_ADC_CTRL0.adc_AUX_en                           Write 0x1 Mode:nan
+#22  CH0_GEN_CTRL0.CH0_bb_bw                            Write Ext Mode:nan
+#23  CH1_GEN_CTRL0.CH1_bb_bw                            Write Ext Mode:nan
+#24  CH0_ADC_CONF.CH0_adc_curctrl                       Write 0x3 Mode:nan
+#25  CH1_ADC_CONF.CH1_adc_curctrl                       Write 0x3 Mode:nan
+#26  CH0_ADC_CONF.CH0_adc_cf                            Write Ext Mode:nan
+#27  CH1_ADC_CONF.CH1_adc_cf                            Write Ext Mode:nan
+#28  CH0_ADC_CONF.CH0_adc_df                            Write 0x1 Mode:nan
+#29  CH1_ADC_CONF.CH1_adc_df                            Write 0x1 Mode:nan
+#30  CH0_TX_CTRL0.CH0_dac_curr_sink_en                  Write 0x1 Mode:nan
+#31  CH1_TX_CTRL0.CH1_dac_curr_sink_en                  Write 0x1 Mode:nan
+#32  CH0_DAC_CONF.CH0_dac_outmode                       Write 0x0 Mode:nan
+#33  CH1_DAC_CONF.CH1_dac_outmode                       Write 0x0 Mode:nan
+#34  CH0_DAC_CONF.CH0_dac_twocom_ob_sel                 Write 0x1 Mode:nan
+#35  CH1_DAC_CONF.CH1_dac_twocom_ob_sel                 Write 0x1 Mode:nan
+#36  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x1 Mode:nan
+#37  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x1 Mode:nan
+#38  CH0_ADC_CONF.CH0_adc_caln                          Write 0x1 Mode:nan
+#39  CH1_ADC_CONF.CH1_adc_caln                          Write 0x1 Mode:nan
+#40  CH0_ADC_STATUS.CH0_adc_cal_busy                    READ 0x0 Mode:nan
+#41  CH1_ADC_STATUS.CH1_adc_cal_busy                    READ 0x0 Mode:nan
+#42  AUX_ADC_CTRL0.adc_AUX_en                           Write 0x1 Mode:nan
+#43  AUX_ADC_CTRL0.adc_AUX_rstn                         Write 0x0 Mode:nan
+#44  AUX_ADC_CTRL0.AUX_ADC_comp_offset_cal_fsm_rstn     Write 0x0 Mode:nan
+#45  AUX_ADC_CTRL0.adc_AUX_DF                           Write 0x1 Mode:nan
+#46  AUX_ADC_CTRL0.AUX_ADC_comp_offset_cal_inv_check_bit Write 0x1 Mode:nan
+#47  AUX_ADC_CTRL0.adc_AUX_rstn                         Write 0x1 Mode:nan
+#48  AUX_ADC_CTRL0.AUX_ADC_comp_offset_cal_fsm_rstn     Write 0x1 Mode:nan
+#49  AUX_ADC_CTRL0.AUX_ADC_comp_offset_cal_fsm_en       Write 0x1 Mode:nan
+#50  AUX_ADC_CTRL0.AUX_ADC_comp_offset_cal_start        Write 0x1 Mode:nan
+#51  AUX_ADC_STATUS.AUX_ADC_comp_offset_cal_done        READ 0x1 Mode:nan
+#52  AUX_ADC_STATUS.AUX_ADC_comp_offset_cal_error       READ 0x0 Mode:nan
+#53  WIFI_DAC_SW_CTRL.DAC0_PDN_OVR_VAL                  Write 0x1 Mode:nan
+#54  WIFI_DAC_SW_CTRL.DAC1_PDN_OVR_VAL                  Write 0x1 Mode:nan
+#55  Delay  
+#56  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x1 Mode:nan
+#57  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x1 Mode:nan
+#58  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x1 Mode:nan
+#59  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x1 Mode:nan
+#60  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x3 Mode:nan
+#61  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x3 Mode:nan
+#62  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x0 Mode:nan
+#63  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:nan
+#64  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x0 Mode:nan
+#65  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:nan
+
+//SHEET:(6w->7w)[WF_CHAINCONFIG2WF_SXON_SIZE]
+#4   SX0_PLL_CTRL0.SX0_sdm_out_high_limit_sel           Write 0x2 Mode:nan
+#5   Sx0_PLL_CTRL0.SX0_sdm_out_low_limit_sel            Write 0x1 Mode:nan
+#6   SX0_FSM_CTRL0.SX0_fsm_lockdet_acc                  Write 0x1 Mode:nan
+#7   SX0_FSM_CTRL0.SX0_fsm_freq_meas_dur                Write 0xa Mode:nan
+#8   SX0_FSM_CTRL1.SX0_fsm_ampl_update_per              Write 0x1 Mode:nan
+#9   SX0_FSM_CTRL1.SX0_fsm_kvco_meas_wait_time          Write 0x1 Mode:nan
+#10  SX0_FSM_CTRL1.SX0_fsm_lock_det_en                  Write 0x1 Mode:nan
+#11  SX0_PLL_CTRL3.SX0_fsm_pfd_dnsel_man                Write 0x0 Mode:nan
+#12  SX0_PLL_CTRL4.SX0_pfd_dnsel                        Write 0x1 Mode:nan
+#13  SX0_PLL_CTRL0.SX0_cplindel_en                      Write 0x1 Mode:nan
+#14  SX0_IN_SPARE0.SX0_div_plswsel                      Write 0x1 Mode:nan
+#15  SX0_PLL_CTRL0.SX0_pfd_desel                        Write 0x1 Mode:nan
+#16  SX0_PLL_CTRL0.SX0_cp_rdgsel                        Write 0x3 Mode:nan
+#17  SX0_PLL_CTRL2.SX0_lpf_sell                         Write 0x5 Mode:nan
+#18  SX1_PLL_CTRL0.SX1_sdm_out_high_limit_sel           Write 0x2 Mode:nan
+#19  Sx1_PLL_CTRL0.SX1_sdm_out_low_limit_sel            Write 0x1 Mode:nan
+#20  SX1_FSM_CTRL0.SX1_fsm_lockdet_acc                  Write 0x1 Mode:nan
+#21  SX1_FSM_CTRL0.SX1_fsm_freq_meas_dur                Write 0xa Mode:nan
+#22  SX1_FSM_CTRL1.SX1_fsm_ampl_update_per              Write 0x1 Mode:nan
+#23  SX1_FSM_CTRL1.SX1_fsm_kvco_meas_wait_time          Write 0x1 Mode:nan
+#24  SX1_FSM_CTRL1.SX1_fsm_lock_det_en                  Write 0x1 Mode:nan
+#25  SX1_PLL_CTRL3.SX1_fsm_pfd_dnsel_man                Write 0x0 Mode:nan
+#26  SX1_PLL_CTRL4.SX1_pfd_dnsel                        Write 0x1 Mode:nan
+#27  SX1_PLL_CTRL0.SX1_cplindel_en                      Write 0x1 Mode:nan
+#28  SX1_IN_SPARE0.SX1_div_plswsel                      Write 0x1 Mode:nan
+#29  SX1_PLL_CTRL0.SX1_pfd_desel                        Write 0x1 Mode:nan
+#30  SX1_PLL_CTRL0.SX1_cp_rdgsel                        Write 0x3 Mode:nan
+#31  SX1_PLL_CTRL2.SX1_lpf_sell                         Write 0x5 Mode:nan
+
+//SHEET:(7w->8w)[WF_SXON2WF_SXLOCKED_SIZE]
+#4   SX0_PLL_CTRL3.SX0_freq_cfg_sel                     Write 0x0 Mode:nan
+#5   SX0_PLL_CTRL3.SX0_div_int                          Write Ext Mode:nan
+#6   SX0_PLL_CTRL3.SX0_div_nfrac                        Write Ext Mode:nan
+#7   SX0_FSM_CTRL0.SX0_fsm_freq_meas_trgt               Write Ext Mode:nan
+#8   SX0_PLL_CTRL1.SX0_vco_cur_sel                      Write 0x1f Mode:nan
+#9   SX0_PLL_CTRL2.SX0_vco_ampdet_ref_sel               Write 0xf Mode:nan
+#10  SX0_FSM_CTRL1.SX0_fsm_use_ext_vco_cur_sel_en       Write 0x1 Mode:nan
+#11  SX0_FSM_CTRL1.SX0_fsm_use_ext_vco_sel_en           Write 0x1 Mode:nan
+#12  SX0_FSM_CTRL1.SX0_fsm_skip_vco_sel_cal             Write 0x1 Mode:nan
+<<<<<<< HEAD
+#13  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x1 Mode:nan
+#14  Delay  
+#15  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x0 Mode:nan
+#16  Delay  
+=======
+#13  SX1_PLL_CTRL3.SX1_freq_cfg_sel                     Write 0x0 Mode:SYS_WIFI_Calib
+#14  SX1_PLL_CTRL3.SX1_div_int                          Write Ext Mode:SYS_WIFI_Calib
+#15  SX1_PLL_CTRL3.SX1_div_nfrac                        Write Ext Mode:SYS_WIFI_Calib
+#16  SX1_FSM_CTRL0.SX1_fsm_freq_meas_trgt               Write Ext Mode:SYS_WIFI_Calib
+>>>>>>> b1db6ebce ([FW] CL6000-00: FSM support for production tests)
+#17  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x1 Mode:nan
+#18  Delay  
+#19  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x0 Mode:nan
+#20  Delay  
+<<<<<<< HEAD
+#21  SX1_PLL_CTRL3.SX1_freq_cfg_sel                     Write 0x0 Mode:nan
+#22  SX1_PLL_CTRL3.SX1_div_int                          Write Ext Mode:nan
+#23  SX1_PLL_CTRL3.SX1_div_nfrac                        Write Ext Mode:nan
+#24  SX1_FSM_CTRL0.SX1_fsm_freq_meas_trgt               Write Ext Mode:nan
+#25  SX1_PLL_CTRL1.SX1_vco_cur_sel                      Write 0x1f Mode:nan
+#26  SX1_PLL_CTRL2.SX1_vco_ampdet_ref_sel               Write 0xf Mode:nan
+#27  SX1_FSM_CTRL1.SX1_fsm_use_ext_vco_cur_sel_en       Write 0x1 Mode:nan
+#28  SX1_FSM_CTRL1.SX1_fsm_use_ext_vco_sel_en           Write 0x1 Mode:nan
+#29  SX1_FSM_CTRL1.SX1_fsm_skip_vco_sel_cal             Write 0x1 Mode:nan
+#30  SX1_FSM_CTRL1.SX1_fsm_cal_en                       Write 0x1 Mode:nan
+#31  Delay  
+#32  SX1_FSM_CTRL1.SX1_fsm_cal_en                       Write 0x0 Mode:nan
+#33  Delay  
+#34  SX1_FSM_CTRL1.SX1_fsm_cal_en                       Write 0x1 Mode:nan
+#35  Delay  
+#36  SX1_FSM_CTRL1.SX1_fsm_cal_en                       Write 0x0 Mode:nan
+#37  Delay  
+#38  SX0_FSM_CTRL1.SX0_fsm_lpf_vctrl_high_flag_clear    Write 0x1 Mode:nan
+#39  SX0_FSM_CTRL1.SX0_fsm_lpf_vctrl_low_flag_clear     Write 0x1 Mode:nan
+#40  SX0_FSM_CTRL1.SX0_fsm_lpf_vctrl_high_flag_clear    Write 0x0 Mode:nan
+#41  SX0_FSM_CTRL1.SX0_fsm_lpf_vctrl_low_flag_clear     Write 0x0 Mode:nan
+#42  SX1_FSM_CTRL1.SX1_fsm_lpf_vctrl_high_flag_clear    Write 0x1 Mode:nan
+#43  SX1_FSM_CTRL1.SX1_fsm_lpf_vctrl_low_flag_clear     Write 0x1 Mode:nan
+#44  SX1_FSM_CTRL1.SX1_fsm_lpf_vctrl_high_flag_clear    Write 0x0 Mode:nan
+#45  SX1_FSM_CTRL1.SX1_fsm_lpf_vctrl_low_flag_clear     Write 0x0 Mode:nan
+#46  CH0_GEN_CTRL2.CH0_bb_cal_ctrl                      Write 0x5 Mode:nan
+#47  CH0_GEN_CTRL2.CH0_bb_cal_ctrl                      Write 0x5 Mode:nan
+#48  CH1_GEN_CTRL2.CH1_bb_cal_ctrl                      Write 0x5 Mode:nan
+#49  CH1_GEN_CTRL2.CH1_bb_cal_ctrl                      Write 0x5 Mode:nan
+#52  SX0_LOGEN_CTRL0.SX0_logen_buff_en                  Write 0x1 Mode:nan
+#53  SX0_LOGEN_CTRL0.SX0_logen_mx_en                    Write 0x1 Mode:nan
+#54  SX0_LOGEN_CTRL0.SX0_logen_div2_drv_en              Write 0x1 Mode:nan
+#55  SX0_LOGEN_CTRL0.SX0_losync_en                      Write 0x1 Mode:nan
+#56  SX1_LOGEN_CTRL0.SX1_logen_buff_en                  Write 0x1 Mode:nan
+#57  SX1_LOGEN_CTRL0.SX1_logen_mx_en                    Write 0x1 Mode:nan
+#58  SX1_LOGEN_CTRL0.SX1_logen_div2_drv_en              Write 0x1 Mode:nan
+#59  SX0_IN_SPARE0.SX0_lobuff_splitter_drv_CH0_LOX0_en  Write Ext Mode:nan
+#60  SX0_IN_SPARE0.SX0_lobuff_splitter_drv_CH0_LOX1_en  Write Ext Mode:nan
+#61  SX0_IN_SPARE0.SX0_lobuff_splitter_drv_CH1_LOX0_en  Write Ext Mode:nan
+#62  SX0_LOGEN_CTRL0.SX0_lobuff_rep_drv_CH0_LOX1_en     Write Ext Mode:nan
+#63  SX0_LOGEN_CTRL0.SX0_lobuff_rep_drv_CH0_LOX0_en     Write Ext Mode:nan
+#64  SX0_LOGEN_CTRL0.SX0_logen_lowband_en               Write 0x1 Mode:nan
+#65  SX0_LOGEN_CTRL0.SX0_logen_mx_band_sel              Write 0x3 Mode:nan
+#66  SX0_LOGEN_CTRL0.SX0_logen_mx_bias_ctrl_div_out     Write 0x3 Mode:nan
+#67  SX0_LOGEN_CTRL0.SX0_logen_mx_bias_ctrl_vco_out     Write 0x3 Mode:nan
+#68  SX0_LOGEN_CTRL0.SX0_logen_mx_cur_sel               Write 0x7 Mode:nan
+#69  SX1_LOGEN_CTRL0.SX1_logen_lowband_en               Write 0x1 Mode:nan
+#70  SX1_LOGEN_CTRL0.SX1_logen_mx_band_sel              Write 0x3 Mode:nan
+#71  SX1_LOGEN_CTRL0.SX1_logen_mx_bias_ctrl_div_out     Write 0x3 Mode:nan
+#72  SX1_LOGEN_CTRL0.SX1_logen_mx_bias_ctrl_vco_out     Write 0x3 Mode:nan
+#73  SX1_LOGEN_CTRL0.SX1_logen_mx_cur_sel               Write 0x7 Mode:nan
+#74  SX1_IN_SPARE0.SX1_lobuff_splitter_drv_CH1_LOX0_en  Write Ext Mode:nan
+#75  SX1_IN_SPARE0.SX1_lobuff_splitter_drv_CH1_LOX1_en  Write Ext Mode:nan
+#76  SX1_IN_SPARE0.SX1_lobuff_splitter_drv_CH0_LOX1_en  Write Ext Mode:nan
+#77  SX1_LOGEN_CTRL0.SX1_lobuff_rep_drv_CH1_LOX0_en     Write Ext Mode:nan
+#78  SX1_LOGEN_CTRL0.SX1_lobuff_rep_drv_CH1_LOX1_en     Write Ext Mode:nan
+#81  CH0_SPARE_IN.CH0_lpf_gain_index_offset             Write 0x9 Mode:nan
+#82  CH0_SPARE_IN.CH0_lpf_tx_mode_gain                  Write 0x2 Mode:nan
+#83  CH1_SPARE_IN.CH1_lpf_gain_index_offset             Write 0x9 Mode:nan
+#84  CH1_SPARE_IN.CH1_lpf_tx_mode_gain                  Write 0x2 Mode:nan
+#87  CH0_SPARE_IN.CH0_rssi_rstn                         Write 0x0 Mode:nan
+#88  CH0_SPARE_IN.CH0_rssi_rstn                         Write 0x1 Mode:nan
+#89  CH1_SPARE_IN.CH1_rssi_rstn                         Write 0x0 Mode:nan
+#90  CH1_SPARE_IN.CH1_rssi_rstn                         Write 0x1 Mode:nan
+#91  CH0_RSSI_CONF.CH0_rssi_en                          Write 0x1 Mode:nan
+#92  CH1_RSSI_CONF.CH1_rssi_en                          Write 0x1 Mode:nan
+#93  CH0_GEN_CTRL0.CH0_trsw_en                          Write 0x1 Mode:NoLB, LB5,LB6, LB16_HiB, LB16_LoB, LB17_HiB, LB17_LoB, CHx_RF_to_extPAD, CHx_extPAD_to_RF, CHx_RF_to_extPAD_obs
+#94  CH1_GEN_CTRL0.CH1_trsw_en                          Write 0x1 Mode:NoLB,LB5,LB6, LB16_HiB, LB16_LoB, LB17_HiB, LB17_LoB, CHx_RF_to_extPAD, CHx_extPAD_to_RF, CHx_RF_to_extPAD_obs
+#95  CH0_GEN_CTRL0.CH0_trsw_en                          Write 0x0 Mode:LB12,LB13,LB14,LB15, CHx_IQ_to_extPAD, CHx_extPAD_to_IQ, CHx_extPAD_to_LPF_to_IQ, CHx_IQ_to_LPF_to_extPAD
+#96  CH1_GEN_CTRL0.CH1_trsw_en                          Write 0x0 Mode:LB12,LB13,LB14,LB15, CHx_IQ_to_extPAD, CHx_extPAD_to_IQ, CHx_extPAD_to_LPF_to_IQ, CHx_IQ_to_LPF_to_extPAD
+#97  CH0_TX_CTRL0.CH0_tx_mix_curr_ctrl                  Write 0x8 Mode:nan
+#98  CH0_TX_CTRL0.CH0_tx_mix_r_ctrl                     Write 0x7 Mode:nan
+#99  CH0_TX_CTRL1.CH0_tx_mix_cap_ctrl                   Write 0x19 Mode:nan
+#100 CH0_TX_CTRL0.CH0_tx_mix_lo_bias_ctrl               Write 0x0 Mode:nan
+#101 RF_FEM0_LNA_CTRL0.CH0_low_band_en                  Write 0x1 Mode:nan
+#102 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_en              Write 0x1 Mode:nan
+#103 CH0_TX_CTRL1.CH0_tx_pga_cap_ctrl                   Write 0x5 Mode:nan
+#104 CH0_TX_CTRL1.CH0_tx_pga_curr_ctrl                  Write 0xc Mode:nan
+#105 CH0_TX_CTRL1.CH0_tx_prepa_curr_ctrl                Write 0x0 Mode:nan
+#106 CH0_TX_CTRL2.CH0_tx_prepa_cap_ctrl                 Write 0x19 Mode:nan
+#107 CH0_TX_CTRL2.CH0_tx_prepa_cap_match_ctrl           Write 0x0 Mode:nan
+#108 CH1_TX_CTRL0.CH1_tx_mix_curr_ctrl                  Write 0x8 Mode:nan
+#109 CH1_TX_CTRL0.CH1_tx_mix_r_ctrl                     Write 0x7 Mode:nan
+#110 CH1_TX_CTRL1.CH1_tx_mix_cap_ctrl                   Write 0x19 Mode:nan
+#111 CH1_TX_CTRL0.CH1_tx_mix_lo_bias_ctrl               Write 0x0 Mode:nan
+#112 RF_FEM1_LNA_CTRL0.CH1_low_band_en                  Write 0x1 Mode:nan
+#113 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_en              Write 0x1 Mode:nan
+#114 CH1_TX_CTRL1.CH1_tx_pga_cap_ctrl                   Write 0x5 Mode:nan
+#115 CH1_TX_CTRL1.CH1_tx_pga_curr_ctrl                  Write 0xc Mode:nan
+#116 CH1_TX_CTRL1.CH1_tx_prepa_curr_ctrl                Write 0x0 Mode:nan
+#117 CH1_TX_CTRL2.CH1_tx_prepa_cap_ctrl                 Write 0x19 Mode:nan
+#118 CH1_TX_CTRL2.CH1_tx_prepa_cap_match_ctrl           Write 0x0 Mode:nan
+#119 CH0_GEN_CTRL1.CH0_localdiv_divbuff_en              Write 0x1 Mode:nan
+#120 CH1_GEN_CTRL1.CH1_localdiv_divbuff_en              Write 0x1 Mode:nan
+#121 CH0_GEN_CTRL1.CH0_localdiv_divbuff_en              Write 0x0 Mode:CHx_IQ_to_extPAD, CHx_extPAD_to_IQ, CHx_extPAD_to_LPF_to_IQ, CHx_IQ_to_LPF_to_extPAD
+#122 CH1_GEN_CTRL1.CH1_localdiv_divbuff_en              Write 0x0 Mode:CHx_IQ_to_extPAD, CHx_extPAD_to_IQ, CHx_extPAD_to_LPF_to_IQ, CHx_IQ_to_LPF_to_extPAD
+#123 CH0_GEN_CTRL1.CH0_localdiv_sx_sel                  Write Ext Mode:nan
+#124 CH1_GEN_CTRL1.CH1_localdiv_sx_sel                  Write Ext Mode:nan
+#125 CH0_TX_CTRL3.CH0_pdet_gain                         Write 0x2 Mode:nan
+#126 CH0_TX_CTRL3.CH0_pdet_en                           Write 0x1 Mode:nan
+#127 CH1_TX_CTRL3.CH1_pdet_gain                         Write 0x2 Mode:nan
+#128 CH1_TX_CTRL3.CH1_pdet_en                           Write 0x1 Mode:nan
+#129 AUX_ADC_CTRL0.adc_AUX_input_sel                    Write 0x2 Mode:nan
+#130 CH0_GEN_CTRL1.CH0_tempsens_en                      Write 0x1 Mode:nan
+#131 CH0_ATB_CTRL.CH0_atb_sel                           Write 0x23 Mode:nan
+#132 DPLL_TEST.atb_en_address                           Write 0x7 Mode:nan
+#133 CH1_GEN_CTRL1.CH1_tempsens_en                      Write 0x1 Mode:nan
+#134 CH1_ATB_CTRL.CH1_atb_sel                           Write 0x23 Mode:nan
+#135 DPLL_TEST.atb_en_address                           Write 0x9 Mode:nan
+#136 AUX_ADC_CTRL0.adc_AUX_input_sel                    Write 0x1 Mode:nan
+#137 RF_FEM0_PA_CTRL0.CH0_tx_pa_lb_res_ladder_en        Write 0x1 Mode:nan
+#138 RF_FEM0_PA_CTRL0.CH0_tx_pa_hb_res_ladder_en        Write 0x1 Mode:nan
+#139 CH0_SPARE_IN.CH0_tx_out_res_lb_pa                  Write 0x0 Mode:nan
+#140 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_vblk            Write 0x0 Mode:nan
+#141 RF_FEM1_PA_CTRL0.CH1_tx_pa_lb_res_ladder_en        Write 0x1 Mode:nan
+#142 RF_FEM1_PA_CTRL0.CH1_tx_pa_hb_res_ladder_en        Write 0x1 Mode:nan
+#143 CH1_SPARE_IN.CH1_tx_out_res_lb_pa                  Write 0x0 Mode:nan
+#144 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_vblk            Write 0x0 Mode:nan
+#145 RF_FEM0_LNA_CTRL0.CH0_rx_lna_st1_vcurstr           Write 0x3 Mode:nan
+#146 RF_FEM0_LNA_CTRL1.CH0_rx_gm_gain_ctrl              Write 0xf Mode:nan
+#147 RF_FEM0_LNA_CTRL1.CH0_rx_gm_5db_en                 Write 0x1 Mode:nan
+#148 CH0_GEN_CTRL0.CH0_dcoc_dac_range                   Write 0x3 Mode:nan
+#149 RF_FEM1_LNA_CTRL0.CH1_rx_lna_st1_vcurstr           Write 0x3 Mode:nan
+#150 RF_FEM1_LNA_CTRL1.CH1_rx_gm_gain_ctrl              Write 0xf Mode:nan
+#151 RF_FEM1_LNA_CTRL1.CH1_rx_gm_5db_en                 Write 0x1 Mode:nan
+#152 CH1_GEN_CTRL0.CH1_dcoc_dac_range                   Write 0x3 Mode:nan
+#153 WIFI_SB_COMMON_CTRL.ADC_DATA_EN_MODE               Write 0x0 Mode:nan
+#154 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_stg1_vg2        Write 0x08 Mode:nan
+#155 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_stg1_vg3        Write 0x10 Mode:nan
+#156 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_stg2_vg2        Write 0xf Mode:nan
+#157 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_stg2_vg3        Write 0x10 Mode:nan
+#158 RF_FEM0_PA_FREQ_CTRL0.CH0_tx_pa_lb_stg1_cap        Write 0x0 Mode:nan
+#159 RF_FEM0_PA_FREQ_CTRL0.CH0_tx_pa_lb_stg2_cap        Write 0x0 Mode:nan
+#160 RF_FEM0_PA_CTRL0.CH0_tx_pa_lb_stg2_slice_ctrl      Write 0x0 Mode:nan
+#161 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_ib_stg1              Write 0x5 Mode:nan
+#162 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_ib_stg2              Write 0xe Mode:nan
+#163 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_hb_stg1_vg2          Write 0x08 Mode:nan
+#164 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_hb_stg1_vg3          Write 0x10 Mode:nan
+#165 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_hb_stg2_vg2          Write 0x08 Mode:nan
+#166 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg2_vg3          Write 0x10 Mode:nan
+#167 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_stg1_vg2        Write 0x08 Mode:nan
+#168 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_stg1_vg3        Write 0x10 Mode:nan
+#169 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_stg2_vg2        Write 0xf Mode:nan
+#170 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_stg2_vg3        Write 0x10 Mode:nan
+#171 RF_FEM1_PA_FREQ_CTRL0.CH1_tx_pa_lb_stg1_cap        Write 0x0 Mode:nan
+#172 RF_FEM1_PA_FREQ_CTRL0.CH1_tx_pa_lb_stg2_cap        Write 0x0 Mode:nan
+#173 RF_FEM1_PA_CTRL0.CH1_tx_pa_lb_stg2_slice_ctrl      Write 0x0 Mode:nan
+#174 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_ib_stg1              Write 0x5 Mode:nan
+#175 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_ib_stg2              Write 0xe Mode:nan
+#176 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_hb_stg1_vg2          Write 0x08 Mode:nan
+#177 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_hb_stg1_vg3          Write 0x10 Mode:nan
+#178 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_hb_stg2_vg2          Write 0x08 Mode:nan
+#179 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg2_vg3          Write 0x10 Mode:nan
+#180 CH0_SPARE_IN.CH0_tx_pa_lb_stg1_vg2_pd              Write 0x14 Mode:nan
+#181 CH0_SPARE_IN.CH0_tx_pa_lb_stg1_vg3_pd              Write 0x0A Mode:nan
+#182 CH0_SPARE_IN.CH0_tx_pa_lb_stg2_vg2_pd              Write 0x14 Mode:nan
+#183 CH0_SPARE_IN.CH0_tx_pa_lb_stg2_vg3_pd              Write 0x0A Mode:nan
+#184 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg1_vg2_pd       Write 0x14 Mode:nan
+#185 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg1_vg3_pd       Write 0x0A Mode:nan
+#186 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg2_vg2_pd       Write 0x14 Mode:nan
+#187 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg2_vg3_pd       Write 0x0A Mode:nan
+#188 CH1_SPARE_IN.CH1_tx_pa_lb_stg1_vg2_pd              Write 0x14 Mode:nan
+#189 CH1_SPARE_IN.CH1_tx_pa_lb_stg1_vg3_pd              Write 0x0A Mode:nan
+#190 CH1_SPARE_IN.CH1_tx_pa_lb_stg2_vg2_pd              Write 0x14 Mode:nan
+#191 CH1_SPARE_IN.CH1_tx_pa_lb_stg2_vg3_pd              Write 0x0A Mode:nan
+#192 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg1_vg2_pd       Write 0x14 Mode:nan
+#193 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg1_vg3_pd       Write 0x0A Mode:nan
+#194 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg2_vg2_pd       Write 0x14 Mode:nan
+#195 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg2_vg3_pd       Write 0x0A Mode:nan
+#196 CH0_GEN_CTRL0.CH0_bb_last_stage_LDO_1v_en          Write 0x1 Mode:High_band
+#197 CH0_GEN_CTRL0.CH0_bb_gc                            Write 0x14 Mode:High_band
+#198 CH0_GEN_CTRL2.CH0_bb_cal_ctrl                      Write 0x0 Mode:High_band
+#199 CH0_TX_CTRL0.CH0_tx_mix_curr_ctrl                  Write 0xf Mode:High_band
+#200 CH0_TX_CTRL0.CH0_tx_mix_lo_bias_ctrl               Write 0x3 Mode:High_band
+#201 CH0_TX_CTRL1.CH0_tx_mix_cap_ctrl                   Write 0xd Mode:High_band
+#202 CH0_TX_CTRL1.CH0_tx_pga_cap_ctrl                   Write 0xc Mode:High_band
+#203 CH0_TX_CTRL1.CH0_tx_pga_curr_ctrl                  Write 0xf Mode:High_band
+#204 CH0_TX_CTRL1.CH0_tx_pga_gain_ctrl                  Write 0x36 Mode:High_band
+#205 CH0_TX_CTRL1.CH0_tx_prepa_curr_ctrl                Write 0xe Mode:High_band
+#206 CH0_TX_CTRL2.CH0_tx_prepa_gain_ctrl                Write 0xf Mode:High_band
+#207 CH0_TX_CTRL2.CH0_tx_prepa_cap_ctrl                 Write 0xa Mode:High_band
+#208 CH0_SPARE_IN.CH0_lpf_tx_mode_gain                  Write 0x4 Mode:High_band
+#209 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_ib_stg1              Write 0xa Mode:High_band
+#210 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_hb_stg1_vg2          Write 0x11 Mode:High_band
+#211 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_hb_stg1_vg3          Write 0x1c Mode:High_band
+#212 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_ib_stg2              Write 0x27 Mode:High_band
+#213 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_hb_stg2_vg2          Write 0x10 Mode:High_band
+#214 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg2_vg3          Write 0x14 Mode:High_band
+#215 RF_FEM0_PA_FREQ_CTRL0.CH0_tx_pa_hb_stg1_cap        Write 0x3 Mode:High_band
+#216 RF_FEM0_PA_CTRL0.CH0_tx_pa_hb_comp_en              Write 0x1 Mode:High_band
+#217 CH1_GEN_CTRL0.CH1_bb_last_stage_LDO_1v_en          Write 0x1 Mode:High_band
+#218 CH1_GEN_CTRL0.CH1_bb_gc                            Write 0x14 Mode:High_band
+#219 CH1_GEN_CTRL2.CH1_bb_cal_ctrl                      Write 0x0 Mode:High_band
+#220 CH1_TX_CTRL0.CH1_tx_mix_curr_ctrl                  Write 0xf Mode:High_band
+#221 CH1_TX_CTRL0.CH1_tx_mix_lo_bias_ctrl               Write 0x3 Mode:High_band
+#222 CH1_TX_CTRL1.CH1_tx_mix_cap_ctrl                   Write 0xd Mode:High_band
+#223 CH1_TX_CTRL1.CH1_tx_pga_cap_ctrl                   Write 0xc Mode:High_band
+#224 CH1_TX_CTRL1.CH1_tx_pga_curr_ctrl                  Write 0xf Mode:High_band
+#225 CH1_TX_CTRL1.CH1_tx_pga_gain_ctrl                  Write 0x36 Mode:High_band
+#226 CH1_TX_CTRL1.CH1_tx_prepa_curr_ctrl                Write 0xe Mode:High_band
+#227 CH1_TX_CTRL2.CH1_tx_prepa_gain_ctrl                Write 0xf Mode:High_band
+#228 CH1_TX_CTRL2.CH1_tx_prepa_cap_ctrl                 Write 0xa Mode:High_band
+#229 CH1_SPARE_IN.CH1_lpf_tx_mode_gain                  Write 0x4 Mode:High_band
+#230 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_ib_stg1              Write 0xa Mode:High_band
+#231 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_hb_stg1_vg2          Write 0x11 Mode:High_band
+#232 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_hb_stg1_vg3          Write 0x1c Mode:High_band
+#233 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_ib_stg2              Write 0x27 Mode:High_band
+#234 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_hb_stg2_vg2          Write 0x10 Mode:High_band
+#235 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg2_vg3          Write 0x14 Mode:High_band
+#236 RF_FEM1_PA_FREQ_CTRL0.CH1_tx_pa_hb_stg1_cap        Write 0x3 Mode:High_band
+#237 RF_FEM1_PA_CTRL0.CH1_tx_pa_hb_comp_en              Write 0x1 Mode:High_band
+#238 lb_cfg.WIFI_ADC1_LB_SEL                            Write 0x1 Mode:LB1
+#239 lb_cfg.WIFI_ADC0_LB_SEL                            Write 0x1 Mode:LB2
+#240 CH1_DAC_CONF.CH1_dac_lpbk_en                       Write 0x1 Mode:LB6
+#241 CH0_RSSI_CONF.CH0_adc_lpbk_en                      Write 0x1 Mode:LB6
+#242 CH0_DAC_CONF.CH0_dac_lpbk_en                       Write 0x1 Mode:LB5
+#243 CH1_RSSI_CONF.CH1_adc_lpbk_en                      Write 0x1 Mode:LB5
+#244 CH0_GEN_CTRL2.CH0_loopbk_phase_shifter_ctrl        Write 0x1 Mode:LB12
+#245 CH0_GEN_CTRL2.CH0_loopbk_amp_en                    Write 0x1 Mode:LB12
+#247 RF_FEM1_PA_CTRL0.CH1_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB12
+#248 CH1_GEN_CTRL2.CH1_loopbk_phase_shifter_ctrl        Write 0x0 Mode:LB13
+#249 CH1_GEN_CTRL2.CH1_loopbk_amp_en                    Write 0x1 Mode:LB13
+#251 RF_FEM0_PA_CTRL0.CH0_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB13
+#252 RF_FEM1_PA_CTRL0.CH1_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB14
+#253 CH0_GEN_CTRL2.CH0_loopbk_amp_en                    Write 0x1 Mode:LB15
+#254 CH0_GEN_CTRL2.CH0_loopbk_phase_shifter_ctrl        Write 0x1 Mode:LB16_HiB
+#255 CH0_GEN_CTRL2.CH0_loopbk_amp_en                    Write 0x0 Mode:LB16_HiB
+#257 RF_FEM0_PA_CTRL0.CH0_tx_pa_hb_loopbk_sw_en         Write 0x1 Mode:LB16_HiB
+#258 CH0_GEN_CTRL2.CH0_loopbk_atten_ctrl                Write 0x0 Mode:LB16_HiB
+#259 RF_FEM1_PA_CTRL0.CH1_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB16_HiB
+#260 CH0_GEN_CTRL2.CH0_loopbk_phase_shifter_ctrl        Write 0x1 Mode:LB16_LoB
+#261 CH0_GEN_CTRL2.CH0_loopbk_amp_en                    Write 0x0 Mode:LB16_LoB
+#263 RF_FEM0_PA_CTRL0.CH0_tx_pa_lb_loopbk_sw_en         Write 0x1 Mode:LB16_LoB
+#264 CH0_GEN_CTRL2.CH0_loopbk_atten_ctrl                Write 0x0 Mode:LB16_LoB
+#265 RF_FEM1_PA_CTRL0.CH1_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB16_LoB
+#266 CH1_GEN_CTRL2.CH1_loopbk_phase_shifter_ctrl        Write 0x1 Mode:LB17_HiB
+#267 CH1_GEN_CTRL2.CH1_loopbk_amp_en                    Write 0x0 Mode:LB17_HiB
+#269 RF_FEM1_PA_CTRL0.CH1_tx_pa_hb_loopbk_sw_en         Write 0x1 Mode:LB17_HiB
+#270 CH1_GEN_CTRL2.CH1_loopbk_atten_ctrl                Write 0x0 Mode:LB17_HiB
+#271 RF_FEM0_PA_CTRL0.CH0_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB17_HiB
+#272 CH1_GEN_CTRL2.CH1_loopbk_phase_shifter_ctrl        Write 0x1 Mode:LB17_LoB
+#273 CH1_GEN_CTRL2.CH1_loopbk_amp_en                    Write 0x0 Mode:LB17_LoB
+#275 RF_FEM1_PA_CTRL0.CH1_tx_pa_lb_loopbk_sw_en         Write 0x1 Mode:LB17_LoB
+#276 CH1_GEN_CTRL2.CH1_loopbk_atten_ctrl                Write 0x0 Mode:LB17_LoB
+#277 RF_FEM0_PA_CTRL0.CH0_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB17_LoB
+#278 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x1 Mode:CHx_RF_to_extPAD
+#279 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x1 Mode:CHx_RF_to_extPAD
+#280 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x0 Mode:CHx_RF_to_extPAD
+#281 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x0 Mode:CHx_RF_to_extPAD
+#282 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x0 Mode:CHx_extPAD_to_RF
+#283 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x0 Mode:CHx_extPAD_to_RF
+#284 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x1 Mode:CHx_extPAD_to_RF
+#285 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x1 Mode:CHx_extPAD_to_RF
+#286 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x0 Mode:CHx_IQ_to_extPAD
+#287 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x0 Mode:CHx_IQ_to_extPAD
+#288 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x1 Mode:CHx_IQ_to_extPAD
+#289 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x1 Mode:CHx_IQ_to_extPAD
+#290 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x1 Mode:CHx_RF_to_extPAD_obs
+#291 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x1 Mode:CHx_RF_to_extPAD_obs
+#292 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#293 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#294 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x1 Mode:CHx_extPAD_to_IQ
+#295 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x1 Mode:CHx_extPAD_to_IQ
+#296 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#297 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#298 CH0_DAC_CONF.CH0_dac_lpbk_en                       Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#299 CH1_DAC_CONF.CH1_dac_lpbk_en                       Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#300 CH0_RSSI_CONF.CH0_adc_lpbk_en                      Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#301 CH1_RSSI_CONF.CH1_adc_lpbk_en                      Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#302 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#303 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#304 CH0_SPARE_IN.CH0_lpf_gain_index_offset             Write 0x2 Mode:CHx_extPAD_to_LPF_to_IQ
+#305 CH1_SPARE_IN.CH1_lpf_gain_index_offset             Write 0x2 Mode:CHx_extPAD_to_LPF_to_IQ
+#306 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#307 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#308 CH0_DAC_CONF.CH0_dac_lpbk_en                       Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#309 CH1_DAC_CONF.CH1_dac_lpbk_en                       Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#310 CH0_RSSI_CONF.CH0_adc_lpbk_en                      Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#311 CH1_RSSI_CONF.CH1_adc_lpbk_en                      Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#312 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#313 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#314 CH0_SPARE_IN.CH0_lpf_gain_index_offset             Write 0x2 Mode:CHx_IQ_to_LPF_to_extPAD
+#315 CH1_SPARE_IN.CH1_lpf_gain_index_offset             Write 0x2 Mode:CHx_IQ_to_LPF_to_extPAD
+#316 WIFI_RF_RX_SW_CTRL3.CH0_RSSI_OVR_EN                Write 0x1 Mode:WIFI_2x2, CH0, CH1
+#317 WIFI_RF_RX_SW_CTRL3.CH0_RSSI_OVR_VAL               Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#318 WIFI_RF_RX_SW_CTRL3.CH1_RSSI_OVR_EN                Write 0x1 Mode:WIFI_2x2, CH0, CH1
+#319 WIFI_RF_RX_SW_CTRL3.CH1_RSSI_OVR_VAL               Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#320 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#321 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#322 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#323 WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#324 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#325 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#326 WIFI_RF_TX_SW_CTRL1.CH0_RF_TX_GAIN_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#327 WIFI_RF_TX_SW_CTRL1.CH1_RF_TX_GAIN_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#328 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#329 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#330 WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#331 WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#332 WIFI_RF_RX_SW_CTRL2.SX0_FRAC_FREQ_SEL_OVR_EN       Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#333 WIFI_DAC_SW_CTRL.DAC0_PDN_OVR_EN                   Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#334 WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_EN             Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#335 WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_EN             Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#336 WIFI_DAC_SW_CTRL.DAC1_PDN_OVR_EN                   Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#337 WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_EN             Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#338 WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_EN             Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#339 WIFI_ADC_SW_CTRL.ADC0_EN_OVR_EN                    Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#340 WIFI_ADC_SW_CTRL.ADC1_EN_OVR_EN                    Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#341 WIFI_ADC_SW_CTRL.ADC_DATA_EN_OVR_EN                Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#342 WIFI_RF_RX_SW_CTRL3.CH0_RSSI_OVR_EN                Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#343 WIFI_RF_RX_SW_CTRL3.CH1_RSSI_OVR_EN                Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#344 WIFI_RF_RX_SW_CTRL3.CH0_RSSI_VALID_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#345 WIFI_RF_RX_SW_CTRL3.CH1_RSSI_VALID_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+=======
+#21  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x1 Mode:nan
+#22  Delay  
+#23  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x0 Mode:nan
+#24  Delay  
+#25  SX1_FSM_CTRL1.SX1_fsm_cal_en                       Write 0x1 Mode:SYS_WIFI_Calib
+#26  Delay  
+#27  SX1_PLL_CTRL3.SX1_soft_rstn                        Write 0x0 Mode:SYS_WIFI_Calib
+#28  Delay  
+#29  SX1_PLL_CTRL3.SX1_soft_rstn                        Write 0x1 Mode:SYS_WIFI_Calib
+#30  Delay  
+#31  SX1_PLL_CTRL4.SX1_pfd_dnsel                        Write 0x0 Mode:SYS_WIFI_Calib
+#32  Delay  
+#33  SX1_FSM_CTRL1.SX1_fsm_cal_en                       Write 0x0 Mode:SYS_WIFI_Calib
+#34  SX0_FSM_CTRL1.SX0_fsm_lpf_vctrl_high_flag_clear    Write 0x1 Mode:nan
+#35  SX0_FSM_CTRL1.SX0_fsm_lpf_vctrl_low_flag_clear     Write 0x1 Mode:nan
+#36  SX0_FSM_CTRL1.SX0_fsm_lpf_vctrl_high_flag_clear    Write 0x0 Mode:nan
+#37  SX0_FSM_CTRL1.SX0_fsm_lpf_vctrl_low_flag_clear     Write 0x0 Mode:nan
+#38  SX1_FSM_CTRL1.SX1_fsm_lpf_vctrl_high_flag_clear    Write 0x1 Mode:SYS_WIFI_Calib
+#39  SX1_FSM_CTRL1.SX1_fsm_lpf_vctrl_low_flag_clear     Write 0x1 Mode:SYS_WIFI_Calib
+#40  SX1_FSM_CTRL1.SX1_fsm_lpf_vctrl_high_flag_clear    Write 0x0 Mode:SYS_WIFI_Calib
+#41  SX1_FSM_CTRL1.SX1_fsm_lpf_vctrl_low_flag_clear     Write 0x0 Mode:SYS_WIFI_Calib
+#42  CH0_GEN_CTRL2.CH0_bb_cal_ctrl                      Write 0x5 Mode:nan
+#43  CH0_GEN_CTRL2.CH0_bb_cal_ctrl                      Write 0x5 Mode:nan
+#44  CH1_GEN_CTRL2.CH1_bb_cal_ctrl                      Write 0x5 Mode:nan
+#45  CH1_GEN_CTRL2.CH1_bb_cal_ctrl                      Write 0x5 Mode:nan
+#46  SX0_FSM_OUT3.SX0_fsm_lock_detect                   READ 0x0 Mode:nan
+#47  SX1_FSM_OUT3.SX1_fsm_lock_detect                   READ 0x0 Mode:SYS_WIFI_Calib
+#48  SX0_LOGEN_CTRL0.SX0_logen_buff_en                  Write 0x1 Mode:nan
+#49  SX0_LOGEN_CTRL0.SX0_logen_mx_en                    Write 0x1 Mode:nan
+#50  SX0_LOGEN_CTRL0.SX0_logen_div2_drv_en              Write 0x1 Mode:nan
+#51  SX0_LOGEN_CTRL0.SX0_losync_en                      Write 0x1 Mode:nan
+#52  SX1_LOGEN_CTRL0.SX1_logen_buff_en                  Write 0x1 Mode:SYS_WIFI_Calib
+#53  SX1_LOGEN_CTRL0.SX1_logen_mx_en                    Write 0x1 Mode:SYS_WIFI_Calib
+#54  SX1_LOGEN_CTRL0.SX1_logen_div2_drv_en              Write 0x1 Mode:SYS_WIFI_Calib
+#55  SX0_IN_SPARE0.SX0_lobuff_splitter_drv_CH0_LOX0_en  Write Ext Mode:nan
+#56  SX0_IN_SPARE0.SX0_lobuff_splitter_drv_CH0_LOX1_en  Write Ext Mode:nan
+#57  SX0_IN_SPARE0.SX0_lobuff_splitter_drv_CH1_LOX0_en  Write Ext Mode:nan
+#58  SX0_LOGEN_CTRL0.SX0_lobuff_rep_drv_CH0_LOX1_en     Write Ext Mode:nan
+#59  SX0_LOGEN_CTRL0.SX0_lobuff_rep_drv_CH0_LOX0_en     Write Ext Mode:nan
+#60  SX0_LOGEN_CTRL0.SX0_logen_lowband_en               Write 0x1 Mode:nan
+#61  SX0_LOGEN_CTRL0.SX0_logen_mx_band_sel              Write 0x3 Mode:nan
+#62  SX0_LOGEN_CTRL0.SX0_logen_mx_bias_ctrl_div_out     Write 0x3 Mode:nan
+#63  SX0_LOGEN_CTRL0.SX0_logen_mx_bias_ctrl_vco_out     Write 0x3 Mode:nan
+#64  SX0_LOGEN_CTRL0.SX0_logen_mx_cur_sel               Write 0x7 Mode:nan
+#65  SX1_LOGEN_CTRL0.SX1_lobuff_rep_drv_CH1_LOX1_en     Write Ext Mode:nan
+#66  CH1_GEN_CTRL1.CH1_localdiv_sx_sel                  Write Ext Mode:nan
+#67  SX1_IN_SPARE0.SX1_lobuff_splitter_drv_CH1_LOX0_en  Write Ext Mode:nan
+#68  SX1_IN_SPARE0.SX1_lobuff_splitter_drv_CH1_LOX1_en  Write Ext Mode:nan
+#69  SX1_IN_SPARE0.SX1_lobuff_splitter_drv_CH0_LOX1_en  Write Ext Mode:nan
+#70  SX1_LOGEN_CTRL0.SX1_lobuff_rep_drv_CH1_LOX0_en     Write Ext Mode:nan
+#71  SX1_LOGEN_CTRL0.SX1_lobuff_rep_drv_CH1_LOX1_en     Write Ext Mode:nan
+#74  CH0_SPARE_IN.CH0_lpf_gain_index_offset             Write 0x6 Mode:nan
+#75  CH0_SPARE_IN.CH0_lpf_tx_mode_gain                  Write 0x2 Mode:nan
+#76  CH1_SPARE_IN.CH1_lpf_gain_index_offset             Write 0x6 Mode:nan
+#77  CH1_SPARE_IN.CH1_lpf_tx_mode_gain                  Write 0x2 Mode:nan
+#80  CH0_SPARE_IN.CH0_rssi_rstn                         Write 0x0 Mode:nan
+#81  CH0_SPARE_IN.CH0_rssi_rstn                         Write 0x1 Mode:nan
+#82  CH1_SPARE_IN.CH1_rssi_rstn                         Write 0x0 Mode:nan
+#83  CH1_SPARE_IN.CH1_rssi_rstn                         Write 0x1 Mode:nan
+#84  CH0_RSSI_CONF.CH0_rssi_en                          Write 0x1 Mode:nan
+#85  CH1_RSSI_CONF.CH1_rssi_en                          Write 0x1 Mode:nan
+#86  CH0_GEN_CTRL0.CH0_trsw_en                          Write 0x1 Mode:NoLB, LB5,LB6, CHx_RF_to_extPAD, CHx_extPAD_to_RF, CHx_RF_to_extPAD_obs
+#87  CH1_GEN_CTRL0.CH1_trsw_en                          Write 0x1 Mode:NoLB,LB5,LB6, CHx_RF_to_extPAD, CHx_extPAD_to_RF, CHx_RF_to_extPAD_obs
+#88  CH0_GEN_CTRL0.CH0_trsw_en                          Write 0x0 Mode:LB12,LB13,LB14,LB15,LB16,LB17, CHx_IQ_to_extPAD, CHx_extPAD_to_IQ, CHx_extPAD_to_LPF_to_IQ, CHx_IQ_to_LPF_to_extPAD
+#89  CH1_GEN_CTRL0.CH1_trsw_en                          Write 0x0 Mode:LB12,LB13,LB14,LB15,LB16,LB17, CHx_IQ_to_extPAD, CHx_extPAD_to_IQ, CHx_extPAD_to_LPF_to_IQ, CHx_IQ_to_LPF_to_extPAD
+#90  CH0_TX_CTRL0.CH0_tx_mix_curr_ctrl                  Write 0x8 Mode:nan
+#91  CH0_TX_CTRL0.CH0_tx_mix_r_ctrl                     Write 0x7 Mode:nan
+#92  CH0_TX_CTRL1.CH0_tx_mix_cap_ctrl                   Write 0x19 Mode:nan
+#93  CH0_TX_CTRL0.CH0_tx_mix_lo_bias_ctrl               Write 0x0 Mode:nan
+#94  RF_FEM0_LNA_CTRL0.CH0_low_band_en                  Write 0x1 Mode:nan
+#95  RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_en              Write 0x1 Mode:nan
+#96  CH0_TX_CTRL1.CH0_tx_pga_cap_ctrl                   Write 0x5 Mode:nan
+#97  CH0_TX_CTRL1.CH0_tx_pga_curr_ctrl                  Write 0xc Mode:nan
+#98  CH0_TX_CTRL1.CH0_tx_prepa_curr_ctrl                Write 0x0 Mode:nan
+#99  CH0_TX_CTRL2.CH0_tx_prepa_cap_ctrl                 Write 0x19 Mode:nan
+#100 CH0_TX_CTRL2.CH0_tx_prepa_cap_match_ctrl           Write 0x0 Mode:nan
+#101 CH1_TX_CTRL0.CH1_tx_mix_curr_ctrl                  Write 0x8 Mode:nan
+#102 CH1_TX_CTRL0.CH1_tx_mix_r_ctrl                     Write 0x7 Mode:nan
+#103 CH1_TX_CTRL1.CH1_tx_mix_cap_ctrl                   Write 0x19 Mode:nan
+#104 CH1_TX_CTRL0.CH1_tx_mix_lo_bias_ctrl               Write 0x0 Mode:nan
+#105 RF_FEM1_LNA_CTRL0.CH1_low_band_en                  Write 0x1 Mode:nan
+#106 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_en              Write 0x1 Mode:nan
+#107 CH1_TX_CTRL1.CH1_tx_pga_cap_ctrl                   Write 0x5 Mode:nan
+#108 CH1_TX_CTRL1.CH1_tx_pga_curr_ctrl                  Write 0xc Mode:nan
+#109 CH1_TX_CTRL1.CH1_tx_prepa_curr_ctrl                Write 0x0 Mode:nan
+#110 CH1_TX_CTRL2.CH1_tx_prepa_cap_ctrl                 Write 0x19 Mode:nan
+#111 CH1_TX_CTRL2.CH1_tx_prepa_cap_match_ctrl           Write 0x0 Mode:nan
+#112 CH0_GEN_CTRL1.CH0_localdiv_divbuff_en              Write 0x1 Mode:nan
+#113 CH1_GEN_CTRL1.CH1_localdiv_divbuff_en              Write 0x1 Mode:nan
+#114 CH0_GEN_CTRL1.CH0_localdiv_divbuff_en              Write 0x0 Mode:CHx_IQ_to_extPAD, CHx_extPAD_to_IQ, CHx_extPAD_to_LPF_to_IQ, CHx_IQ_to_LPF_to_extPAD
+#115 CH1_GEN_CTRL1.CH1_localdiv_divbuff_en              Write 0x0 Mode:CHx_IQ_to_extPAD, CHx_extPAD_to_IQ, CHx_extPAD_to_LPF_to_IQ, CHx_IQ_to_LPF_to_extPAD
+#116 CH0_GEN_CTRL1.CH0_localdiv_sx_sel                  Write Ext Mode:nan
+#117 CH1_GEN_CTRL1.CH1_localdiv_sx_sel                  Write Ext Mode:nan
+#118 CH0_TX_CTRL3.CH0_pdet_gain                         Write 0x2 Mode:nan
+#119 CH0_TX_CTRL3.CH0_pdet_en                           Write 0x1 Mode:nan
+#120 CH1_TX_CTRL3.CH1_pdet_gain                         Write 0x2 Mode:nan
+#121 CH1_TX_CTRL3.CH1_pdet_en                           Write 0x1 Mode:nan
+#122 AUX_ADC_CTRL0.adc_AUX_input_sel                    Write 0x2 Mode:nan
+#123 CH0_GEN_CTRL1.CH0_tempsens_en                      Write 0x1 Mode:nan
+#124 CH0_ATB_CTRL.CH0_atb_sel                           Write 0x23 Mode:nan
+#125 DPLL_TEST.atb_en_address                           Write 0x7 Mode:nan
+#126 CH1_GEN_CTRL1.CH1_tempsens_en                      Write 0x1 Mode:nan
+#127 CH1_ATB_CTRL.CH1_atb_sel                           Write 0x23 Mode:nan
+#128 DPLL_TEST.atb_en_address                           Write 0x9 Mode:nan
+#129 AUX_ADC_CTRL0.adc_AUX_input_sel                    Write 0x1 Mode:nan
+#130 RF_FEM0_PA_CTRL0.CH0_tx_pa_lb_res_ladder_en        Write 0x1 Mode:nan
+#131 RF_FEM0_PA_CTRL0.CH0_tx_pa_hb_res_ladder_en        Write 0x1 Mode:nan
+#132 CH0_SPARE_IN.CH0_tx_out_res_lb_pa                  Write 0x0 Mode:nan
+#133 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_vblk            Write 0x0 Mode:nan
+#134 RF_FEM1_PA_CTRL0.CH1_tx_pa_lb_res_ladder_en        Write 0x1 Mode:nan
+#135 RF_FEM1_PA_CTRL0.CH1_tx_pa_hb_res_ladder_en        Write 0x1 Mode:nan
+#136 CH1_SPARE_IN.CH1_tx_out_res_lb_pa                  Write 0x0 Mode:nan
+#137 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_vblk            Write 0x0 Mode:nan
+#138 RF_FEM0_LNA_CTRL0.CH0_rx_lna_st1_vcurstr           Write 0x3 Mode:nan
+#139 RF_FEM0_LNA_CTRL1.CH0_rx_gm_gain_ctrl              Write 0xf Mode:nan
+#140 RF_FEM0_LNA_CTRL1.CH0_rx_gm_5db_en                 Write 0x1 Mode:nan
+#141 CH0_GEN_CTRL0.CH0_dcoc_dac_range                   Write 0x3 Mode:nan
+#142 RF_FEM1_LNA_CTRL0.CH1_rx_lna_st1_vcurstr           Write 0x3 Mode:nan
+#143 RF_FEM1_LNA_CTRL1.CH1_rx_gm_gain_ctrl              Write 0xf Mode:nan
+#144 RF_FEM1_LNA_CTRL1.CH1_rx_gm_5db_en                 Write 0x1 Mode:nan
+#145 CH1_GEN_CTRL0.CH1_dcoc_dac_range                   Write 0x3 Mode:nan
+#146 WIFI_SB_COMMON_CTRL.ADC_DATA_EN_MODE               Write 0x3 Mode:nan
+#147 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_stg1_vg2        Write 0x08 Mode:nan
+#148 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_stg1_vg3        Write 0x10 Mode:nan
+#149 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_stg2_vg2        Write 0xf Mode:nan
+#150 RF_FEM0_PA_2P5G_CTRL0.CH0_tx_pa_lb_stg2_vg3        Write 0x10 Mode:nan
+#151 RF_FEM0_PA_FREQ_CTRL0.CH0_tx_pa_lb_stg1_cap        Write 0x0 Mode:nan
+#152 RF_FEM0_PA_FREQ_CTRL0.CH0_tx_pa_lb_stg2_cap        Write 0x0 Mode:nan
+#153 RF_FEM0_PA_CTRL0.CH0_tx_pa_lb_stg2_slice_ctrl      Write 0x0 Mode:nan
+#154 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_ib_stg1              Write 0x5 Mode:nan
+#155 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_ib_stg2              Write 0xe Mode:nan
+#156 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_hb_stg1_vg2          Write 0x08 Mode:nan
+#157 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_hb_stg1_vg3          Write 0x10 Mode:nan
+#158 RF_FEM0_PA_5G_CTRL0.CH0_tx_pa_hb_stg2_vg2          Write 0x08 Mode:nan
+#159 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg2_vg3          Write 0x10 Mode:nan
+#160 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_stg1_vg2        Write 0x08 Mode:nan
+#161 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_stg1_vg3        Write 0x10 Mode:nan
+#162 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_stg2_vg2        Write 0xf Mode:nan
+#163 RF_FEM1_PA_2P5G_CTRL0.CH1_tx_pa_lb_stg2_vg3        Write 0x10 Mode:nan
+#164 RF_FEM1_PA_FREQ_CTRL0.CH1_tx_pa_lb_stg1_cap        Write 0x0 Mode:nan
+#165 RF_FEM1_PA_FREQ_CTRL0.CH1_tx_pa_lb_stg2_cap        Write 0x0 Mode:nan
+#166 RF_FEM1_PA_CTRL0.CH1_tx_pa_lb_stg2_slice_ctrl      Write 0x0 Mode:nan
+#167 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_ib_stg1              Write 0x5 Mode:nan
+#168 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_ib_stg2              Write 0xe Mode:nan
+#169 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_hb_stg1_vg2          Write 0x08 Mode:nan
+#170 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_hb_stg1_vg3          Write 0x10 Mode:nan
+#171 RF_FEM1_PA_5G_CTRL0.CH1_tx_pa_hb_stg2_vg2          Write 0x08 Mode:nan
+#172 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg2_vg3          Write 0x10 Mode:nan
+#173 CH0_SPARE_IN.CH0_tx_pa_lb_stg1_vg2_pd              Write 0x14 Mode:nan
+#174 CH0_SPARE_IN.CH0_tx_pa_lb_stg1_vg3_pd              Write 0x0A Mode:nan
+#175 CH0_SPARE_IN.CH0_tx_pa_lb_stg2_vg2_pd              Write 0x14 Mode:nan
+#176 CH0_SPARE_IN.CH0_tx_pa_lb_stg2_vg3_pd              Write 0x0A Mode:nan
+#177 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg1_vg2_pd       Write 0x14 Mode:nan
+#178 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg1_vg3_pd       Write 0x0A Mode:nan
+#179 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg2_vg2_pd       Write 0x14 Mode:nan
+#180 RF_FEM0_PA_5G_CTRL1.CH0_tx_pa_hb_stg2_vg3_pd       Write 0x0A Mode:nan
+#181 CH1_SPARE_IN.CH1_tx_pa_lb_stg1_vg2_pd              Write 0x14 Mode:nan
+#182 CH1_SPARE_IN.CH1_tx_pa_lb_stg1_vg3_pd              Write 0x0A Mode:nan
+#183 CH1_SPARE_IN.CH1_tx_pa_lb_stg2_vg2_pd              Write 0x14 Mode:nan
+#184 CH1_SPARE_IN.CH1_tx_pa_lb_stg2_vg3_pd              Write 0x0A Mode:nan
+#185 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg1_vg2_pd       Write 0x14 Mode:nan
+#186 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg1_vg3_pd       Write 0x0A Mode:nan
+#187 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg2_vg2_pd       Write 0x14 Mode:nan
+#188 RF_FEM1_PA_5G_CTRL1.CH1_tx_pa_hb_stg2_vg3_pd       Write 0x0A Mode:nan
+#189 lb_cfg.WIFI_ADC1_LB_SEL                            Write 0x1 Mode:LB1
+#190 lb_cfg.WIFI_ADC0_LB_SEL                            Write 0x1 Mode:LB2
+#191 CH1_DAC_CONF.CH1_dac_lpbk_en                       Write 0x1 Mode:LB6
+#192 CH0_RSSI_CONF.CH0_adc_lpbk_en                      Write 0x1 Mode:LB6
+#193 CH0_DAC_CONF.CH0_dac_lpbk_en                       Write 0x1 Mode:LB5
+#194 CH1_RSSI_CONF.CH1_adc_lpbk_en                      Write 0x1 Mode:LB5
+#195 CH0_GEN_CTRL2.CH0_loopbk_phase_shifter_ctrl        Write 0x1 Mode:LB12
+#196 CH0_GEN_CTRL2.CH0_loopbk_amp_en                    Write 0x1 Mode:LB12
+#198 RF_FEM1_PA_CTRL0.CH1_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB12
+#199 CH1_GEN_CTRL2.CH1_loopbk_phase_shifter_ctrl        Write 0x0 Mode:LB13
+#200 CH1_GEN_CTRL2.CH1_loopbk_amp_en                    Write 0x1 Mode:LB13
+#202 RF_FEM0_PA_CTRL0.CH0_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB13
+#203 RF_FEM1_PA_CTRL0.CH1_rx_lna_loopbk_sw_en           Write 0x1 Mode:LB14
+#204 CH0_GEN_CTRL2.CH0_loopbk_amp_en                    Write 0x1 Mode:LB15
+#205 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x1 Mode:CHx_RF_to_extPAD
+#206 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x1 Mode:CHx_RF_to_extPAD
+#207 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x0 Mode:CHx_RF_to_extPAD
+#208 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x0 Mode:CHx_RF_to_extPAD
+#209 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x0 Mode:CHx_extPAD_to_RF
+#210 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x0 Mode:CHx_extPAD_to_RF
+#211 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x1 Mode:CHx_extPAD_to_RF
+#212 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x1 Mode:CHx_extPAD_to_RF
+#213 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x0 Mode:CHx_IQ_to_extPAD
+#214 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x0 Mode:CHx_IQ_to_extPAD
+#215 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x1 Mode:CHx_IQ_to_extPAD
+#216 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x1 Mode:CHx_IQ_to_extPAD
+#217 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x1 Mode:CHx_RF_to_extPAD_obs
+#218 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x1 Mode:CHx_RF_to_extPAD_obs
+#219 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#220 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#221 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x1 Mode:CHx_extPAD_to_IQ
+#222 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x1 Mode:CHx_extPAD_to_IQ
+#223 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#224 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#225 CH0_DAC_CONF.CH0_dac_lpbk_en                       Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#226 CH1_DAC_CONF.CH1_dac_lpbk_en                       Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#227 CH0_RSSI_CONF.CH0_adc_lpbk_en                      Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#228 CH1_RSSI_CONF.CH1_adc_lpbk_en                      Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#229 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#230 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#231 CH0_SPARE_IN.CH0_lpf_gain_index_offset             Write 0x2 Mode:CHx_extPAD_to_LPF_to_IQ
+#232 CH1_SPARE_IN.CH1_lpf_gain_index_offset             Write 0x2 Mode:CHx_extPAD_to_LPF_to_IQ
+#233 CH0_GEN_CTRL0.CH0_bb_exten                         Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#234 CH1_GEN_CTRL0.CH1_bb_exten                         Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#235 CH0_DAC_CONF.CH0_dac_lpbk_en                       Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#236 CH1_DAC_CONF.CH1_dac_lpbk_en                       Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#237 CH0_RSSI_CONF.CH0_adc_lpbk_en                      Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#238 CH1_RSSI_CONF.CH1_adc_lpbk_en                      Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#239 CH0_ADC_DAC_SPARE.CH0_dac_external_pad_en          Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#240 CH1_ADC_DAC_SPARE.CH1_dac_external_pad_en          Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#241 CH0_SPARE_IN.CH0_lpf_gain_index_offset             Write 0x2 Mode:CHx_IQ_to_LPF_to_extPAD
+#242 CH1_SPARE_IN.CH1_lpf_gain_index_offset             Write 0x2 Mode:CHx_IQ_to_LPF_to_extPAD
+#243 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#244 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#245 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#246 WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#247 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#248 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#249 WIFI_RF_TX_SW_CTRL1.CH0_RF_TX_GAIN_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#250 WIFI_RF_TX_SW_CTRL1.CH1_RF_TX_GAIN_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#251 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#252 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_EN            Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#253 WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#254 WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#255 WIFI_RF_RX_SW_CTRL2.SX0_FRAC_FREQ_SEL_OVR_EN       Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#256 WIFI_DAC_SW_CTRL.DAC0_PDN_OVR_EN                   Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#257 WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_EN             Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#258 WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_EN             Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#259 WIFI_DAC_SW_CTRL.DAC1_PDN_OVR_EN                   Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#260 WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_EN             Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#261 WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_EN             Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#262 WIFI_ADC_SW_CTRL.ADC0_EN_OVR_EN                    Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#263 WIFI_ADC_SW_CTRL.ADC1_EN_OVR_EN                    Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#264 WIFI_ADC_SW_CTRL.ADC_DATA_EN_OVR_EN                Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#265 WIFI_RF_RX_SW_CTRL3.CH0_RSSI_OVR_EN                Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#266 WIFI_RF_RX_SW_CTRL3.CH1_RSSI_OVR_EN                Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#267 WIFI_RF_RX_SW_CTRL3.CH0_RSSI_VALID_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+#268 WIFI_RF_RX_SW_CTRL3.CH1_RSSI_VALID_OVR_EN          Write 0x0 Mode:WIFI_2x2, CH0, CH1
+>>>>>>> b1db6ebce ([FW] CL6000-00: FSM support for production tests)
+
+//SHEET:(8w->8w)[WF_SXLOCKED2SXLOCKED_SIZE]
+#6   SX0_PLL_CTRL3.SX0_freq_cfg_sel                     Write 0x0 Mode:nan
+#7   SX0_PLL_CTRL3.SX0_div_int                          Write Ext Mode:nan
+#8   SX0_PLL_CTRL3.SX0_div_nfrac                        Write Ext Mode:nan
+#9   SX0_FSM_CTRL0.SX0_fsm_freq_meas_trgt               Write Ext Mode:nan
+#14  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x1 Mode:nan
+#16  SX0_PLL_CTRL3.SX0_soft_rstn                        Write 0x0 Mode:nan
+#17  SX0_PLL_CTRL3.SX0_soft_rstn                        Write 0x1 Mode:nan
+#18  Delay  
+#19  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x0 Mode:nan
+#20  Delay  
+#21  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x1 Mode:nan
+#22  Delay  
+<<<<<<< HEAD
+=======
+#23  SX0_FSM_OUT3.SX0_fsm_lock_detect                   READ 0x0 Mode:nan
+>>>>>>> b1db6ebce ([FW] CL6000-00: FSM support for production tests)
+#25  SX0_FSM_CTRL1.SX0_fsm_cal_en                       Write 0x0 Mode:nan
+#27  CH0_GEN_CTRL0.CH0_bb_bw                            Write Ext Mode:nan
+#28  CH1_GEN_CTRL0.CH1_bb_bw                            Write Ext Mode:nan
+#29  CH0_ADC_CONF.CH0_adc_cf                            Write Ext Mode:nan
+#30  CH1_ADC_CONF.CH1_adc_cf                            Write Ext Mode:nan
+#31  DPLL_OUTDIV_CTRL0.dpll_dac_clk_div_sel             Write Ext Mode:nan
+#32  DPLL_OUTDIV_CTRL0.dpll_adc_clk_div2_sel            Write 0x1 Mode:nan
+#33  CH0_SPARE_IN.CH0_rssi_rstn                         Write 0x0 Mode:nan
+#34  CH0_SPARE_IN.CH0_rssi_rstn                         Write 0x1 Mode:nan
+#35  CH1_SPARE_IN.CH1_rssi_rstn                         Write 0x0 Mode:nan
+#36  CH1_SPARE_IN.CH1_rssi_rstn                         Write 0x1 Mode:nan
+#37  CH0_RSSI_CONF.CH0_rssi_en                          Write 0x1 Mode:nan
+#38  CH1_RSSI_CONF.CH1_rssi_en                          Write 0x1 Mode:nan
+#39  CH0_GEN_CTRL0.CH0_trsw_en                          Write 0x1 Mode:nan
+#40  CH1_GEN_CTRL0.CH1_trsw_en                          Write 0x1 Mode:nan
+#41  CH0_GEN_CTRL1.CH0_localdiv_divbuff_en              Write 0x1 Mode:nan
+#42  CH1_GEN_CTRL1.CH1_localdiv_divbuff_en              Write 0x1 Mode:nan
+#43  CH0_GEN_CTRL1.CH0_localdiv_sx_sel                  Write 0x0 Mode:nan
+#44  CH1_GEN_CTRL1.CH1_localdiv_sx_sel                  Write 0x0 Mode:nan
+<<<<<<< HEAD
+=======
+#45  lb_cfg.WIFI_ADC1_LB_SEL                            Write 0x1 Mode:Production_LB1
+#46  lb_cfg.WIFI_ADC0_LB_SEL                            Write 0x1 Mode:Production_LB2
+#47  CH1_DAC_CONF.CH1_dac_lpbk_en                       Write 0x1 Mode:Production_LB6
+#48  CH0_RSSI_CONF.CH0_adc_lpbk_en                      Write 0x1 Mode:Production_LB6
+#49  CH0_DAC_CONF.CH0_dac_lpbk_en                       Write 0x1 Mode:Production_LB5
+#50  CH1_RSSI_CONF.CH1_adc_lpbk_en                      Write 0x1 Mode:Production_LB5
+#51  CH0_GEN_CTRL2.CH0_loopbk_phase_shifter_ctrl        Write 0x1 Mode:Production_LB12
+#52  CH0_GEN_CTRL2.CH0_loopbk_amp_en                    Write 0x1 Mode:Production_LB12
+#54  RF_FEM1_PA_CTRL0.CH1_rx_lna_loopbk_sw_en           Write 0x1 Mode:Production_LB12
+#55  CH1_GEN_CTRL2.CH1_loopbk_phase_shifter_ctrl        Write 0x0 Mode:Production_LB13
+#56  CH1_GEN_CTRL2.CH1_loopbk_amp_en                    Write 0x1 Mode:Production_LB13
+#58  RF_FEM0_PA_CTRL0.CH0_rx_lna_loopbk_sw_en           Write 0x1 Mode:Production_LB13
+#59  RF_FEM1_PA_CTRL0.CH1_rx_lna_loopbk_sw_en           Write 0x1 Mode:Production_LB14
+#60  CH0_GEN_CTRL2.CH0_loopbk_amp_en                    Write 0x1 Mode:Production_LB15
+#61  CH0_GEN_CTRL1.CH0_localdiv_sx_sel                  Write Ext Mode:Production_test
+#62  CH1_GEN_CTRL1.CH1_localdiv_sx_sel                  Write Ext Mode:Production_test
+#63  SX1_PLL_CTRL3.SX1_freq_cfg_sel                     Write 0x0 Mode:Production_test
+#64  SX1_PLL_CTRL3.SX1_div_int                          Write Ext Mode:Production_test
+#65  SX1_PLL_CTRL3.SX1_div_nfrac                        Write Ext Mode:Production_test
+#66  SX1_FSM_CTRL0.SX1_fsm_freq_meas_trgt               Write Ext Mode:Production_test
+>>>>>>> b1db6ebce ([FW] CL6000-00: FSM support for production tests)
+
+//SHEET:(8w->9w)[WF_SXLOCKED2RXON_SIZE]
+#4   WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_EN            Write 0x1 Mode:nan
+#5   WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_EN            Write 0x1 Mode:nan
+#6   WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_EN            Write 0x1 Mode:nan
+#7   WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_EN            Write 0x1 Mode:nan
+#8   WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_EN            Write 0x1 Mode:nan
+#9   WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_EN            Write 0x1 Mode:nan
+#10  WIFI_RF_TX_SW_CTRL1.CH0_RF_TX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#11  WIFI_RF_TX_SW_CTRL1.CH1_RF_TX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#12  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_EN            Write 0x1 Mode:nan
+#13  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_EN            Write 0x1 Mode:nan
+#14  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#15  WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#16  WIFI_RF_RX_SW_CTRL2.SX0_FRAC_FREQ_SEL_OVR_EN       Write 0x1 Mode:nan
+#17  WIFI_DAC_SW_CTRL.DAC0_PDN_OVR_EN                   Write 0x1 Mode:nan
+#18  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_EN             Write 0x1 Mode:nan
+#19  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_EN             Write 0x1 Mode:nan
+#20  WIFI_DAC_SW_CTRL.DAC1_PDN_OVR_EN                   Write 0x1 Mode:nan
+#21  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_EN             Write 0x1 Mode:nan
+#22  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_EN             Write 0x1 Mode:nan
+#23  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_EN                    Write 0x1 Mode:nan
+#24  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_EN                    Write 0x1 Mode:nan
+#25  WIFI_ADC_SW_CTRL.ADC_DATA_EN_OVR_EN                Write 0x1 Mode:nan
+#26  WIFI_RF_RX_SW_CTRL3.CH0_RSSI_OVR_EN                Write 0x1 Mode:nan
+#27  WIFI_RF_RX_SW_CTRL3.CH1_RSSI_OVR_EN                Write 0x1 Mode:nan
+#28  WIFI_RF_RX_SW_CTRL3.CH0_RSSI_VALID_OVR_EN          Write 0x1 Mode:nan
+#29  WIFI_RF_RX_SW_CTRL3.CH1_RSSI_VALID_OVR_EN          Write 0x1 Mode:nan
+#30  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_EN          Write 0x0 Mode:LB16_HiB, LB16_LoB, LB17_HiB, LB17_LoB
+#31  WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_EN          Write 0x0 Mode:LB16_HiB, LB16_LoB, LB17_HiB, LB17_LoB
+#32  WIFI_SB_COMMON_CTRL.ADC_DATA_EN_MODE               Write 0x3 Mode:nan
+#33  WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:wifi_2x2, NoLB
+#34  WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:wifi_2x2, NoLB
+#35  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x0 Mode:wifi_2x2, NoLB
+#36  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:wifi_2x2, NoLB
+#37  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x0 Mode:wifi_2x2, NoLB
+#38  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:wifi_2x2, NoLB
+#39  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:wifi_2x2, NoLB
+#40  WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:wifi_2x2, NoLB
+#41  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:wifi_2x2, NoLB
+#42  WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:wifi_2x2, NoLB
+#43  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x1 Mode:wifi_2x2, NoLB
+#44  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x1 Mode:wifi_2x2, NoLB
+#45  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x1 Mode:wifi_2x2, NoLB
+#46  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x1 Mode:wifi_2x2, NoLB
+#47  Delay  
+#48  Delay  
+#49  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write Ext Mode:wifi_2x2, NoLB
+#50  WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write Ext Mode:wifi_2x2, NoLB
+#51  Delay  
+#52  WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CH0
+#53  WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CH0
+#54  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x0 Mode:CH0
+#55  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:CH0
+#56  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x0 Mode:CH0
+#57  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:CH0
+#58  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CH0
+#59  WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CH0
+#60  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CH0
+#61  WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CH0
+#62  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CH0
+#63  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CH0
+#64  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x1 Mode:CH0
+#65  Delay  
+#66  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x3 Mode:CH0
+#67  Delay  
+#68  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write Ext Mode:CH0
+#69  WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write Ext Mode:CH0
+#70  Delay  
+#71  WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CH1
+#72  WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CH1
+#73  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:CH1
+#74  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x0 Mode:CH1
+#75  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:CH1
+#76  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x0 Mode:CH1
+#77  WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CH1
+#78  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CH1
+#79  WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CH1
+#80  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CH1
+#81  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CH1
+#82  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CH1
+#83  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x1 Mode:CH1
+#84  Delay  
+#85  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x3 Mode:CH1
+#86  Delay  
+#87  WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write Ext Mode:CH1
+#88  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write Ext Mode:CH1
+#89  WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:LB13, LB17_HiB, LB17_LoB
+#90  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x0 Mode:LB13, LB17_HiB, LB17_LoB, LB6
+#91  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x0 Mode:LB13, LB17_HiB, LB17_LoB, LB6
+#92  WIFI_DAC_SW_CTRL.DAC0_PDN_OVR_VAL                  Write 0x1 Mode:LB13, LB17_HiB, LB17_LoB, LB6
+#93  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:LB13, LB17_HiB, LB17_LoB
+#94  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:LB13, LB17_HiB, LB17_LoB
+#95  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x1 Mode:LB13, LB17_HiB, LB17_LoB
+#96  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x1 Mode:LB13, LB17_HiB, LB17_LoB, LB6
+#97  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write Ext Mode:LB13, LB17_HiB, LB17_LoB
+#98  WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:LB12, LB16_HiB, LB16_LoB, LB14
+#99  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:LB12, LB16_HiB, LB16_LoB, LB5, LB14
+#100 WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:LB12, LB16_HiB, LB16_LoB, LB5, LB14
+#101 WIFI_DAC_SW_CTRL.DAC1_PDN_OVR_VAL                  Write 0x1 Mode:LB12, LB16_HiB, LB16_LoB, LB5, LB14
+#102 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:LB12, LB16_HiB, LB16_LoB, LB14
+#103 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:LB12, LB16_HiB, LB16_LoB, LB14
+#104 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x1 Mode:LB12, LB16_HiB, LB16_LoB, LB14
+#105 WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x1 Mode:LB12, LB16_HiB, LB16_LoB, LB5, LB14
+#106 WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write Ext Mode:LB12, LB16_HiB, LB16_LoB, LB14
+#107 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CHx_RF_to_extPAD
+#108 WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write Ext Mode:CHx_RF_to_extPAD
+#109 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD
+#110 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD
+#111 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD
+#112 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CHx_RF_to_extPAD
+#113 WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write Ext Mode:CHx_RF_to_extPAD
+#114 WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD
+#115 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD
+#116 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD
+#117 WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x1 Mode:CHx_RF_to_extPAD_obs
+#118 WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x1 Mode:CHx_RF_to_extPAD_obs
+#119 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CHx_RF_to_extPAD_obs
+#120 WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write Ext Mode:CHx_RF_to_extPAD_obs
+#121 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#122 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#123 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#124 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CHx_RF_to_extPAD_obs
+#125 WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write Ext Mode:CHx_RF_to_extPAD_obs
+#126 WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#127 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#128 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_RF_to_extPAD_obs
+#129 WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x1 Mode:CHx_extPAD_to_IQ
+#130 WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x1 Mode:CHx_extPAD_to_IQ
+#131 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_IQ
+#132 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_IQ
+#133 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_IQ
+#134 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_IQ
+#135 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_IQ
+#136 WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_IQ
+#137 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_IQ
+#138 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_IQ
+#139 WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#140 WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#141 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#142 WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#143 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#144 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#145 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#146 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CHx_extPAD_to_LPF_to_IQ
+#147 WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#148 WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#149 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#150 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_LPF_to_IQ
+#151 WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#152 WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#153 WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#154 WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#155 WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#156 WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#157 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#158 WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#159 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#160 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#161 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#162 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x1 Mode:CHx_IQ_to_LPF_to_extPAD
+#163 WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#164 WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#165 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+#166 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_LPF_to_extPAD
+
+//SHEET:(9w->8w)[WF_RXON2SXLOCKED_SIZE]
+#4   WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:nan
+#5   WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:nan
+#6   WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x0 Mode:nan
+#7   WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:nan
+#8   WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x0 Mode:nan
+#9   WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:nan
+#10  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:nan
+#11  WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:nan
+#12  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:nan
+#13  WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:nan
+#14  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:nan
+#15  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:nan
+#16  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x3 Mode:nan
+#17  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x3 Mode:nan
+#18  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write TBD Mode:nan
+#19  WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write TBD Mode:nan
+
+//SHEET:(8w->10w)[WF_SXLOCKED2TXON_SIZE]
+#4   WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_EN            Write 0x1 Mode:nan
+#5   WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_EN            Write 0x1 Mode:nan
+#6   WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_EN            Write 0x1 Mode:nan
+#7   WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_EN            Write 0x1 Mode:nan
+#8   WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_EN            Write 0x1 Mode:nan
+#9   WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_EN            Write 0x1 Mode:nan
+#10  WIFI_RF_TX_SW_CTRL1.CH0_RF_TX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#11  WIFI_RF_TX_SW_CTRL1.CH1_RF_TX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#12   WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_EN           Write 0x1 Mode:nan
+#13  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_EN            Write 0x1 Mode:nan
+#14  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#15  WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#16  WIFI_RF_RX_SW_CTRL2.SX0_FRAC_FREQ_SEL_OVR_EN       Write 0x1 Mode:nan
+#17  WIFI_DAC_SW_CTRL.DAC0_PDN_OVR_EN                   Write 0x1 Mode:nan
+#18  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_EN             Write 0x1 Mode:nan
+#19  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_EN             Write 0x1 Mode:nan
+#20  WIFI_DAC_SW_CTRL.DAC1_PDN_OVR_EN                   Write 0x1 Mode:nan
+#21  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_EN             Write 0x1 Mode:nan
+#22  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_EN             Write 0x1 Mode:nan
+#23  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_EN                    Write 0x1 Mode:nan
+#24  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_EN                    Write 0x1 Mode:nan
+#25  WIFI_ADC_SW_CTRL.ADC_DATA_EN_OVR_EN                Write 0x1 Mode:nan
+#26  WIFI_RF_RX_SW_CTRL3.CH0_RSSI_OVR_EN                Write 0x1 Mode:nan
+#27  WIFI_RF_RX_SW_CTRL3.CH1_RSSI_OVR_EN                Write 0x1 Mode:nan
+#28  WIFI_RF_RX_SW_CTRL3.CH0_RSSI_VALID_OVR_EN          Write 0x1 Mode:nan
+#29  WIFI_RF_RX_SW_CTRL3.CH1_RSSI_VALID_OVR_EN          Write 0x1 Mode:nan
+#30  WIFI_SB_COMMON_CTRL.DAC_DATA_VALID_MODE            Write 0x3 Mode:nan
+#31  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x3 Mode:wifi_2x2
+#32  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x3 Mode:wifi_2x2
+#33  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:wifi_2x2
+#34  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:wifi_2x2
+#35  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x1 Mode:wifi_2x2
+#36  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x1 Mode:wifi_2x2
+#37  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x1 Mode:wifi_2x2
+#38  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x1 Mode:wifi_2x2
+#39  Delay  
+#40  WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x1 Mode:wifi_2x2
+#41  WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x1 Mode:wifi_2x2
+#42  WIFI_RF_TX_SW_CTRL1.CH0_RF_TX_GAIN_OVR_VAL         Write Ext Mode:wifi_2x2
+#43  WIFI_RF_TX_SW_CTRL1.CH1_RF_TX_GAIN_OVR_VAL         Write Ext Mode:wifi_2x2
+#44  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x1 Mode:wifi_2x2
+#45  WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x1 Mode:wifi_2x2
+#46  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x1 Mode:wifi_2x2
+#47  WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x1 Mode:wifi_2x2
+#48  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x3 Mode:CH0, LB15
+#49  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x3 Mode:CH0, LB15
+#50  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CH0, LB15
+#51  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CH0, LB15
+#52  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x1 Mode:CH0, LB15
+#53  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x1 Mode:CH0, LB15
+#54  Delay  
+#55  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:CH0, LB15
+#56  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:CH0, LB15
+#57  Delay  
+#58  WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x1 Mode:CH0, LB15
+#59  WIFI_RF_TX_SW_CTRL1.CH0_RF_TX_GAIN_OVR_VAL         Write Ext Mode:CH0
+#60  WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CH0, LB15
+#61  WIFI_RF_TX_SW_CTRL1.CH1_RF_TX_GAIN_OVR_VAL         Write Ext Mode:CH0
+#62  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x1 Mode:CH0
+#63  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x1 Mode:CH0
+#64  WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x1 Mode:CH0
+#65  WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CH0
+#66  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x3 Mode:CH1
+#67  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x3 Mode:CH1
+#68  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CH1
+#69  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CH1
+#70  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x1 Mode:CH1
+#71  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x1 Mode:CH1
+#72  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:CH1
+#73  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:CH1
+#74  Delay  
+#75  WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x1 Mode:CH1
+#76  WIFI_RF_TX_SW_CTRL1.CH0_RF_TX_GAIN_OVR_VAL         Write Ext Mode:CH1
+#77  WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CH1
+#78  WIFI_RF_TX_SW_CTRL1.CH1_RF_TX_GAIN_OVR_VAL         Write Ext Mode:CH1
+#79  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x1 Mode:CH1
+#80  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x1 Mode:CH1
+#81  WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x1 Mode:CH1
+#82  WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CH1
+#115 WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x3 Mode:LB12, LB16_HiB, LB16_LoB, LB5
+#116 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:LB12, LB16_HiB, LB16_LoB
+#117 WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x1 Mode:LB12, LB16_HiB, LB16_LoB ,LB5
+#118 WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x1 Mode:LB12, LB16_HiB, LB16_LoB ,LB5
+#119 Delay  
+#120 WIFI_DAC_SW_CTRL.DAC0_PDN_OVR_VAL                  Write 0x1 Mode:LB12, LB16_HiB, LB16_LoB, LB5
+#121 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x1 Mode:LB12, LB16_HiB, LB16_LoB
+#122 WIFI_RF_TX_SW_CTRL1.CH0_RF_TX_GAIN_OVR_VAL         Write Ext Mode:LB12, LB16_HiB, LB16_LoB
+#123 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:LB12
+#124 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x1 Mode:LB16_HiB, LB16_LoB
+#125 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:LB12
+#126 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x1 Mode:LB16_HiB, LB16_LoB
+#127 WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x3 Mode:LB13, LB17_HiB, LB17_LoB, LB6
+#128 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:LB13, LB17_HiB, LB17_LoB
+#129 WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x1 Mode:LB13, LB17_HiB, LB17_LoB, LB6
+#130 WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x1 Mode:LB13, LB17_HiB, LB17_LoB, LB6
+#131 Delay  
+#132 WIFI_DAC_SW_CTRL.DAC1_PDN_OVR_VAL                  Write 0x1 Mode:LB13, LB17_HiB, LB17_LoB, LB6
+#133 WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x1 Mode:LB13, LB17_HiB, LB17_LoB
+#134 WIFI_RF_TX_SW_CTRL1.CH1_RF_TX_GAIN_OVR_VAL         Write Ext Mode:LB13, LB17_HiB, LB17_LoB
+#135 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:LB13
+#136 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x1 Mode:LB17_HiB, LB17_LoB
+#137 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:LB13
+#138 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x1 Mode:LB17_HiB, LB17_LoB
+#139 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_RF
+#140 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x1 Mode:CHx_extPAD_to_RF
+#141 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x1 Mode:CHx_extPAD_to_RF
+#142 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x1 Mode:CHx_extPAD_to_RF
+#143 WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CHx_extPAD_to_RF
+#144 WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x1 Mode:CHx_extPAD_to_RF
+#145 WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x1 Mode:CHx_extPAD_to_RF
+#146 WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x1 Mode:CHx_extPAD_to_RF
+#147 WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x1 Mode:CHx_IQ_to_extPAD
+#148 WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x1 Mode:CHx_IQ_to_extPAD
+#149 WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x1 Mode:CHx_IQ_to_extPAD
+#150 WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x1 Mode:CHx_IQ_to_extPAD
+#151 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_extPAD
+#152 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_extPAD
+#153 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_extPAD
+#154 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_extPAD
+#155 WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_extPAD
+#156 WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_extPAD
+#157 WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_extPAD
+#158 WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:CHx_IQ_to_extPAD
+
+//SHEET:(10w->8w)[WF_TXON2SXLOCKED_SIZE]
+#4   WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:nan
+#5   WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:nan
+#6   WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x0 Mode:nan
+#7   WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:nan
+#8   WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x0 Mode:nan
+#9   WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:nan
+#10  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:nan
+#11  WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:nan
+#12  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:nan
+#13  WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:nan
+#14  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:nan
+#15  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:nan
+#16  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x3 Mode:nan
+#17  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x3 Mode:nan
+#18  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_VAL         Write TBD Mode:nan
+#19  WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_VAL         Write TBD Mode:nan
+
+//SHEET:(all->3w)[WF_RESET2WIFIOFF_SIZE]
+#2   WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_EN            Write 0x1 Mode:nan
+#3   WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_EN            Write 0x1 Mode:nan
+#4   WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_EN            Write 0x1 Mode:nan
+#5   WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_EN            Write 0x1 Mode:nan
+#6   WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_EN            Write 0x1 Mode:nan
+#7   WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_EN            Write 0x1 Mode:nan
+#8   WIFI_RF_TX_SW_CTRL1.CH0_RF_TX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#9   WIFI_RF_TX_SW_CTRL1.CH1_RF_TX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#10   WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_EN           Write 0x1 Mode:nan
+#11  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_EN            Write 0x1 Mode:nan
+#12  WIFI_RF_RX_SW_CTRL1.CH0_RF_RX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#13  WIFI_RF_RX_SW_CTRL1.CH1_RF_RX_GAIN_OVR_EN          Write 0x1 Mode:nan
+#14  WIFI_RF_RX_SW_CTRL2.SX0_FRAC_FREQ_SEL_OVR_EN       Write 0x1 Mode:nan
+#15  WIFI_DAC_SW_CTRL.DAC0_PDN_OVR_EN                   Write 0x1 Mode:nan
+#16  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_EN             Write 0x1 Mode:nan
+#17  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_EN             Write 0x1 Mode:nan
+#18  WIFI_DAC_SW_CTRL.DAC1_PDN_OVR_EN                   Write 0x1 Mode:nan
+#19  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_EN             Write 0x1 Mode:nan
+#20  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_EN             Write 0x1 Mode:nan
+#21  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_EN                    Write 0x1 Mode:nan
+#22  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_EN                    Write 0x1 Mode:nan
+#23  WIFI_ADC_SW_CTRL.ADC_DATA_EN_OVR_EN                Write 0x1 Mode:nan
+#24  WIFI_RF_RX_SW_CTRL3.CH0_RSSI_OVR_EN                Write 0x1 Mode:nan
+#25  WIFI_RF_RX_SW_CTRL3.CH1_RSSI_OVR_EN                Write 0x1 Mode:nan
+#26  WIFI_RF_RX_SW_CTRL3.CH0_RSSI_VALID_OVR_EN          Write 0x1 Mode:nan
+#27  WIFI_RF_RX_SW_CTRL3.CH1_RSSI_VALID_OVR_EN          Write 0x1 Mode:nan
+#28  WIFI_SB_COMMON_CTRL.DAC_DATA_VALID_MODE            Write 0x0 Mode:nan
+#29  WIFI_SB_COMMON_CTRL.ADC_DATA_EN_MODE               Write 0x0 Mode:nan
+#30  WIFI_RF_TX_SW_CTRL0.CH0_RF_PA_EN_OVR_VAL           Write 0x0 Mode:nan
+#31  WIFI_RF_TX_SW_CTRL0.CH1_RF_PA_EN_OVR_VAL           Write 0x0 Mode:nan
+#32  WIFI_RF_TX_SW_CTRL0.CH0_RF_TX_EN_OVR_VAL           Write 0x0 Mode:nan
+#33  WIFI_RF_TX_SW_CTRL0.CH1_RF_TX_EN_OVR_VAL           Write 0x0 Mode:nan
+#34  WIFI_RF_RX_SW_CTRL0.CH0_RF_RX_EN_OVR_VAL           Write 0x0 Mode:nan
+#35  WIFI_RF_RX_SW_CTRL0.CH1_RF_RX_EN_OVR_VAL           Write 0x0 Mode:nan
+#36  WIFI_RF_TX_SW_CTRL0.CH0_RF_TR_SW_OVR_VAL           Write 0x0 Mode:nan
+#37  WIFI_RF_TX_SW_CTRL0.CH1_RF_TR_SW_OVR_VAL           Write 0x0 Mode:nan
+#38  CH0_GEN_CTRL0                                      Write reset Mode:nan
+#39  CH1_GEN_CTRL0                                      Write reset Mode:nan
+#40  CH0_GEN_CTRL1                                      Write reset Mode:nan
+#41  CH1_GEN_CTRL1                                      Write reset Mode:nan
+#42  CH0_GEN_CTRL2                                      Write reset Mode:nan
+#43  CH1_GEN_CTRL2                                      Write reset Mode:nan
+#44  RF_FEM0_PA_CTRL0                                   Write reset Mode:nan
+#45  RF_FEM1_PA_CTRL0                                   Write reset Mode:nan
+#46  CH0_ADC_DAC_SPARE                                  Write reset Mode:nan
+#47  CH0_DAC_CONF                                       Write reset Mode:nan
+#48  CH0_RSSI_CONF                                      Write reset Mode:nan
+#49  CH0_SPARE_IN                                       Write reset Mode:nan
+#50  CH1_ADC_DAC_SPARE                                  Write reset Mode:nan
+#51  CH1_DAC_CONF                                       Write reset Mode:nan
+#52  CH1_RSSI_CONF                                      Write reset Mode:nan
+#53  CH1_SPARE_IN                                       Write reset Mode:nan
+#54  CH0_RSSI_CONF.CH0_rssi_en                          Write 0x0 Mode:nan
+#55  CH1_RSSI_CONF.CH1_rssi_en                          Write 0x0 Mode:nan
+#56  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x1 Mode:nan
+#57  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x1 Mode:nan
+#58  WIFI_ADC_SW_CTRL.ADC0_EN_OVR_VAL                   Write 0x0 Mode:nan
+#59  WIFI_ADC_SW_CTRL.ADC1_EN_OVR_VAL                   Write 0x0 Mode:nan
+#60  WIFI_DAC_SW_CTRL.DAC0_PDN_OVR_VAL                  Write 0x0 Mode:nan
+#61  WIFI_DAC_SW_CTRL.DAC1_PDN_OVR_VAL                  Write 0x0 Mode:nan
+#62  WIFI_DAC_SW_CTRL.DAC0_STANDBYNI_OVR_VAL            Write 0x0 Mode:nan
+#63  WIFI_DAC_SW_CTRL.DAC0_STANDBYNQ_OVR_VAL            Write 0x0 Mode:nan
+#64  WIFI_DAC_SW_CTRL.DAC1_STANDBYNI_OVR_VAL            Write 0x0 Mode:nan
+#65  WIFI_DAC_SW_CTRL.DAC1_STANDBYNQ_OVR_VAL            Write 0x0 Mode:nan
+#66  SX0_IN_SPARE0.SX0_lobuff_splitter_drv_CH0_LOX0_en  Write 0x0 Mode:nan
+#67  SX0_IN_SPARE0.SX0_lobuff_splitter_drv_CH0_LOX1_en  Write 0x0 Mode:nan
+#68  SX0_IN_SPARE0.SX0_lobuff_splitter_drv_CH1_LOX0_en  Write 0x0 Mode:nan
+#69  SX0_LOGEN_CTRL0.SX0_lobuff_rep_drv_CH0_LOX1_en     Write 0x0 Mode:nan
+#70  SX0_LOGEN_CTRL0.SX0_lobuff_rep_drv_CH0_LOX0_en     Write 0x0 Mode:nan
+#71  SX1_IN_SPARE0.SX1_lobuff_splitter_drv_CH1_LOX0_en  Write 0x0 Mode:nan
+#72  SX1_IN_SPARE0.SX1_lobuff_splitter_drv_CH1_LOX1_en  Write 0x0 Mode:nan
+#73  SX1_IN_SPARE0.SX1_lobuff_splitter_drv_CH0_LOX1_en  Write 0x0 Mode:nan
+#74  SX1_LOGEN_CTRL0.SX1_lobuff_rep_drv_CH1_LOX1_en     Write 0x0 Mode:nan
+#75  SX1_LOGEN_CTRL0.SX1_lobuff_rep_drv_CH1_LOX0_en     Write 0x0 Mode:nan
+#76  SX0_LOGEN_CTRL0.SX0_logen_buff_en                  Write 0x0 Mode:nan
+#77  SX0_LOGEN_CTRL0.SX0_logen_mx_en                    Write 0x0 Mode:nan
+#78  SX0_LOGEN_CTRL0.SX0_logen_div2_drv_en              Write 0x0 Mode:nan
+#79  SX0_LOGEN_CTRL0.SX0_losync_en                      Write 0x0 Mode:nan
+#80  CH0_ADC_CONF.CH0_adc_caln                          Write 0x0 Mode:nan
+#81  CH1_ADC_CONF.CH1_adc_caln                          Write 0x0 Mode:nan
+#82   SX0_LOGEN_CTRL0.SX0_logen_ldo_en                  Write 0x0 Mode:nan
+#83  SX0_LOGEN_CTRL0.SX0_lobuff_ldo_en                  Write 0x0 Mode:nan
+#84  SX0_LOGEN_CTRL0.SX0_losync_ldo_en                  Write 0x0 Mode:nan
+#85  CH0_GEN_CTRL0.CH0_bb_bias_en                       Write 0x0 Mode:nan
+#86  CH1_GEN_CTRL0.CH1_bb_bias_en                       Write 0x0 Mode:nan
+#87  CH0_ADC_CONF.CH0_adc_ldo_en                        Write 0x0 Mode:nan
+#88  CH1_ADC_CONF.CH1_adc_ldo_en                        Write 0x0 Mode:nan
+#89  CH0_GEN_CTRL1.CH0_dac_ldo_en                       Write 0x0 Mode:nan
+#90  CH1_GEN_CTRL1.CH1_dac_ldo_en                       Write 0x0 Mode:nan
+#91  CH0_GEN_CTRL1.CH0_localdiv_ldo_en                  Write 0x0 Mode:nan
+#92  CH1_GEN_CTRL1.CH1_localdiv_ldo_en                  Write 0x0 Mode:nan
+#93  CH0_GEN_CTRL2.CH0_bb_en                            Write 0x0 Mode:nan
+#94  CH1_GEN_CTRL2.CH1_bb_en                            Write 0x0 Mode:nan
+#95  RF_FEM0_LNA_CTRL0.CH0_rx_lna_st1_ldo10_en          Write 0x0 Mode:nan
+#96  RF_FEM0_LNA_CTRL0.CH0_rx_lna_st1_ldo14_en          Write 0x0 Mode:nan
+#97  RF_FEM0_LNA_ST2_CTRL0.CH0_rx_lna_st2_ldo10_en      Write 0x0 Mode:nan
+#98  RF_FEM0_LNA_ST2_CTRL0.CH0_rx_lna_st2_ldo14_en      Write 0x0 Mode:nan
+#99  RF_FEM1_LNA_CTRL0.CH1_rx_lna_st1_ldo10_en          Write 0x0 Mode:nan
+#100 RF_FEM1_LNA_CTRL0.CH1_rx_lna_st1_ldo14_en          Write 0x0 Mode:nan
+#101 RF_FEM1_LNA_ST2_CTRL0.CH1_rx_lna_st2_ldo10_en      Write 0x0 Mode:nan
+#102 RF_FEM1_LNA_ST2_CTRL0.CH1_rx_lna_st2_ldo14_en      Write 0x0 Mode:nan
+#103 CH0_GEN_CTRL2.CH0_pdet_ldo_en                      Write 0x0 Mode:nan
+#104 CH1_GEN_CTRL2.CH1_pdet_ldo_en                      Write 0x0 Mode:nan

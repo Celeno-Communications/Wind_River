@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Usage:
+# cc -o prog $CFLAGS `libdevmem-config --cflags` prog.c `libdevmem-config --libs`
+
+### FIXME fix when installed in a different dir!
+mydir=$(readlink -e $(dirname $0))
+
+while [ -n "$1" ]
+do
+	case "$1" in
+      --cflags)
+          echo -n " -I $mydir"
+      ;;
+      --libs)
+          echo -n " $mydir/libdevmem.o"
+      ;;
+      *)
+         echo >&2 "Invalid option. Use --libs or --cflags"
+         exit 1
+      ;;
+      esac
+      shift
+done
+

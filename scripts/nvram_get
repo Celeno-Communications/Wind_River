@@ -1,0 +1,28 @@
+#!/bin/sh
+
+[ -z ${cl_install_dir} ] && cl_install_dir=/cl6k
+
+# test to see that environment settings exist
+if [ ! -f $cl_install_dir/scripts/env.sh ]
+then
+	echo "env.sh missing, please make sure that cl_cfg_dir and cl_install_dir are set properly ..."
+	exit 1
+else
+	. $cl_install_dir/scripts/env.sh
+fi
+
+case "$1" in
+	"chip0"|"chip1"|"chip2"|"chip3"|"tcv0"|"tcv2"|"tcv4"|"tcv6"|"chip0_bt"|"chip1_bt"|"chip2_bt"|"chip3_bt")
+		DAT_FILE="$cl_cfg_dir/cl_$1.dat"
+	;;
+	*)
+		echo "usage: nvram_get [chip0|chip1|chip2|chip3|tcv0|tcv2|tcv4|tcv6|chip0_bt|chip1_bt|chip2_bt|chip3_bt] [Key]"
+		exit 1
+	;;
+esac
+
+if [ ! -f $DAT_FILE ]; then
+    $cl_install_dir/scripts/restore_defaults.sh "$1"
+fi
+
+awk -F '=' -v KEY="$2" '($1==KEY) { i = index($0,"="); print substr($0,i+1); }' $DAT_FILE

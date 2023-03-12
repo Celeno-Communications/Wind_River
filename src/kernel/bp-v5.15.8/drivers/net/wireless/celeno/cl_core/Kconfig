@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause
+config CL6K
+	tristate "Celeno CL CLI USB support"
+	depends on m
+	depends on USB
+	help
+	  This option enables support for Celeno CL CLI USB.
+	  Select M (recommended), if you have a wireless USB module.
+

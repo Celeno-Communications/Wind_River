@@ -1,0 +1,6 @@
+#ifndef __REG_TXM0_STREAM4_H_
+#define __REG_TXM0_STREAM4_H_
+
+#define REG_TXM0_STREAM4_BASE_ADDR 0x607D4500
+
+#endif //__REG_TXM0_STREAM4_H_

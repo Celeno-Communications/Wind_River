@@ -1,0 +1,8 @@
+#ifndef EMC_USB_cmakeConfigure_H
+#define EMC_USB_cmakeConfigure_H
+
+#define EMC_USB_LOG_LEVEL ${EMC_USB_LOG_LEVEL_UPPERCASE}
+
+#define EMC_USB_MAX_SPEED EMC_USB_${EMC_USB_MAX_SPEED}_SPEED
+
+#endif

@@ -1,0 +1,20 @@
+add_executable(HeapChronicleTest HeapChronicleTest.c)
+target_link_libraries(HeapChronicleTest PRIVATE emc_std)
+eme_add_test(HeapChronicleTest)
+
+add_executable(HeapChunkStatisticsTest HeapChunkStatisticsTest.c)
+target_link_libraries(HeapChunkStatisticsTest PRIVATE emc_std)
+eme_add_test(HeapChunkStatisticsTest)
+
+add_executable(HeapMonitorTest HeapMonitorTest.c)
+target_link_libraries(HeapMonitorTest PRIVATE emc_std)
+eme_add_test(HeapMonitorTest)
+
+add_executable(HeapBreakpointTest HeapBreakpointTest.c)
+target_link_libraries(HeapBreakpointTest PRIVATE emc_std emc_test)
+eme_add_test(HeapBreakpointTest)
+
+add_executable(HeapSummaryTest HeapSummaryTest.c)
+target_link_libraries(HeapSummaryTest PRIVATE emc_std emc_test)
+eme_add_test(HeapSummaryTest)
+

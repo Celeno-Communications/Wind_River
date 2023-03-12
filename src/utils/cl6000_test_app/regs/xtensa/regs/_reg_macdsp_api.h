@@ -1,0 +1,6 @@
+#ifndef __REG_MACDSP_API_H_
+#define __REG_MACDSP_API_H_
+
+#define REG_MACDSP_API_BASE_ADDR 0x60400000
+
+#endif //__REG_MACDSP_API_H_

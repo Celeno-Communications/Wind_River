@@ -1,0 +1,6 @@
+#ifndef __REG_MPU_COMMON_H_
+#define __REG_MPU_COMMON_H_
+
+#define REG_MPU_COMMON_BASE_ADDR 0x604A9800
+
+#endif //__REG_MPU_COMMON_H_

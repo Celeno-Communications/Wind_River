@@ -1,0 +1,6 @@
+#ifndef __REG_LCU_COMMON_H_
+#define __REG_LCU_COMMON_H_
+
+#define REG_LCU_COMMON_BASE_ADDR 0x607CF000
+
+#endif //__REG_LCU_COMMON_H_

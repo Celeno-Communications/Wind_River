@@ -1,0 +1,33 @@
+eme_add_prerequisites(emcpp_system_celeno_wifi)
+eme_add_prerequisites(external_freertos_kernel)
+eme_add_prerequisites(external_freertos_plus_tcp)
+
+if(PROJECT_BUILD_DEBUG)
+  option(PROJECT_BUILD_OPTIM "" OFF)
+else()
+  option(PROJECT_BUILD_OPTIM "" ON)
+endif()
+
+set(EMC_STD_MUTEX "freertos" CACHE STRING "")
+
+set(FREERTOS_PLUS_TCP_CONFIG_FILE_DIRECTORY ${CMAKE_SOURCE_DIR}/emcpp_system_celeno_wifi/src/freertos CACHE STRING "")
+#option(FREERTOS_PLUS_TCP_STATIC_BUFFERS "" ON)
+#option(FREERTOS_PLUS_TCP_IPV6 "" ON)
+
+if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+  set(FREERTOS_CONFIG_FILE_DIRECTORY ${CMAKE_SOURCE_DIR}/emcpp_system_celeno_wifi/src/freertos/posix CACHE STRING "")
+  set(FREERTOS_PORT GCC_POSIX CACHE STRING "")
+  if (FREERTOS_PLUS_TCP_IPV6)
+    set(FREERTOS_PLUS_TCP_NET_IF "board_family" CACHE STRING "")
+  else()
+    set(FREERTOS_PLUS_TCP_NET_IF "linux" CACHE STRING "")
+  endif()
+endif()
+
+if (CMAKE_SYSTEM_NAME STREQUAL "Generic")
+  include(emcpp_system_celeno_wifi/eme/xtensa.cmake)
+  set(FREERTOS_CONFIG_FILE_DIRECTORY ${CMAKE_SOURCE_DIR}/emcpp_system_celeno_wifi/src/freertos/xtensa CACHE STRING "")
+  set(FREERTOS_PORT XCC_XTENSA CACHE STRING "")
+  set(FREERTOS_PLUS_TCP_CONFIG_FILE_DIRECTORY ${CMAKE_SOURCE_DIR}/emcpp_system_celeno_wifi/src/freertos CACHE STRING "")
+  set(FREERTOS_PLUS_TCP_NET_IF "board_family" CACHE STRING "")
+endif()

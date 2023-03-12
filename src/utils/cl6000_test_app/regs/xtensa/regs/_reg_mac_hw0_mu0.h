@@ -1,0 +1,6 @@
+#ifndef __REG_MAC_HW0_MU0_H_
+#define __REG_MAC_HW0_MU0_H_
+
+#define REG_MAC_HW0_MU0_BASE_ADDR 0x60600000
+
+#endif //__REG_MAC_HW0_MU0_H_

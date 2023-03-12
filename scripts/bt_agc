@@ -1,0 +1,27 @@
+#Version=5
+
+#Address	Value			Descripteion							line
+#-------	-----			------------							----
+0x2038,	0x0101011C			#AGC_LNA_GAIN                            2
+0x203C,	0x0303090F			#AGC_GB1_GAIN                            3
+0x2040,	0x171A1D20			#AGC_GB2_GAIN_1                          4
+0x2044,	0x0B0E1114			#AGC_GB2_GAIN_2                          5
+0x2048,	0x7F020508			#AGC_GB2_GAIN_3                          6
+0x204C,	0x0000007C			#AGC_GB2_GAIN_4                          7
+0x2050,	0x00000000			#AGC_LNA_LOW_GAIN                        8
+0x2060,	0x00F7DDF1			#AGC_GB1_GAIN_NEXT                       9
+0x2024,	0x00180000			#AGC_FINE_S11_S10                        10
+0x2000,	0x00280000			#AGC_COARSE_S1_S0                        11
+0x2004,	0x00000066			#AGC_CONST_COARSE_S2                     12
+0x2018,	0x000A3E3E			#AGC_CONFIG                              13
+0x200C,	0x02190302			#AGC_THOLD_NOSIG_TRANS                   15
+0x2028,	0x1B240068			#AGC_GB1GB2_GAIN_FINE_S12                16
+0x2008,	0x0F030F03			#AGC_THOLD_S11_S10                       17
+0x2020,	0x000E0555			#AGC_RXBBCLR_LEN                         18
+0x2034,	0x03E80FF3			#AGC_MISC_CONFIG                         19
+0x2010,	0x10101010			#AGC_GAIN_DLY_FINE_COARSE                20
+0x2014,	0x40040000			#AGC_START_WAIT_LOCK_TIME                21
+0x201C,	0x00030303			#AGC_ACC_TIME                            22
+0x2054,	0x10091009			#AGC_THOLD_S11_S10_LR                    24
+0x2058,	0x021C001C			#AGC_THOLD_NOSIG_TRANS_LR                25
+0x2060,	0x00133A34			#agc config_LR- set point                26

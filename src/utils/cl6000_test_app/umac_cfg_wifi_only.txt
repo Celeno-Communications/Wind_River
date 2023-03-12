@@ -1,0 +1,1 @@
+0x4002FF08 0x2 # select wifi-only profile

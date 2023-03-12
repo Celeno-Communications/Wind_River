@@ -1,0 +1,6 @@
+#ifndef __REG_ETH2WLAN_H_
+#define __REG_ETH2WLAN_H_
+
+#define REG_ETH2WLAN_BASE_ADDR 0x607C0000
+
+#endif //__REG_ETH2WLAN_H_

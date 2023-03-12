@@ -1,0 +1,23 @@
+message(STATUS "")
+message(STATUS "emc_log                        Description                         Value")
+message(STATUS "------------------------------ ----------------------------------- -----")
+message(STATUS "[EMC_LOG] .................... C logging system .................. <${EMC_LOG}>")
+message(STATUS "[EMC_LOG_LEVEL] .............. C root log level .................. <${EMC_LOG_LEVEL}>")
+if(EMC_LOG STREQUAL "INTERNAL")
+  message(STATUS "[EMC_LOG_INTERNAL_USES_PC] ... program_count determines position . <${EMC_LOG_INTERNAL_USES_PC}>")
+  message(STATUS "[EMC_LOG_INTERNAL_USES_FILE] . __FILE__ to determines position ... <${EMC_LOG_INTERNAL_USES_FILE}>")
+  message(STATUS "")
+  message(STATUS "[EMC_LOG_INTERNAL_USES_TIMESTAMP]  ............................... <${EMC_LOG_INTERNAL_USES_TIMESTAMP}>")
+  message(STATUS "[EMC_LOG_USES_HASH] .............................................. <${EMC_LOG_USES_HASH}>")
+  message(STATUS "[EMC_LOG_INTERNAL_INSTANCES] ..................................... <${EMC_LOG_INTERNAL_INSTANCES}>")
+  message(STATUS "[EMC_LOG_INTERNAL_HAS_CONFIGURE] ................................. <${EMC_LOG_INTERNAL_HAS_CONFIGURE}>")
+  message(STATUS "[EMC_LOG_INTERNAL_APPENDER_MEMORY_INSTANCES] ..................... <${EMC_LOG_INTERNAL_APPENDER_MEMORY_INSTANCES}>")
+  message(STATUS "[EMC_LOG_INTERNAL_APPENDER_PRINTF_INSTANCES] ..................... <${EMC_LOG_INTERNAL_APPENDER_PRINTF_INSTANCES}>")
+  message(STATUS "[EMC_LOG_INTERNAL_APPENDER_UART_INSTANCES] ....................... <${EMC_LOG_INTERNAL_APPENDER_UART_INSTANCES}>")
+  message(STATUS "[EMC_LOG_INTERNAL_APPENDER_BUFFERED_TRANSPORT_INSTANCES] ......... <${EMC_LOG_INTERNAL_APPENDER_BUFFERED_TRANSPORT_INSTANCES}>")
+endif()
+
+configure_file(eme/cmakeConfigure.h.in cmakeConfigure.h)
+
+add_subdirectory(src)
+

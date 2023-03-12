@@ -1,0 +1,11 @@
+#ifndef EMC_HW_cmakeConfigure_H
+#define EMC_HW_cmakeConfigure_H
+
+#cmakedefine01 EMC_HW_PORT_INLINE_MMIO
+#cmakedefine01 EMC_HW_PORT_READ_HOOK
+#cmakedefine01 EMC_HW_PORT_WRITE_HOOK
+#cmakedefine01 EMC_MEMORY_POOL_TYPE_UNCACHED
+
+#define EMC_MEMORY_POOL_TYPE_STATIC_INSTANCES ${EMC_MEMORY_POOL_TYPE_STATIC_INSTANCES}
+
+#endif

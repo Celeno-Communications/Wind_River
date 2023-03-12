@@ -1,0 +1,12 @@
+if(EMC_STD_DMA_MALLOC STREQUAL "STD")
+  add_subdirectory(std)
+elseif(EMC_STD_DMA_MALLOC STREQUAL "ALIGNED")
+  add_subdirectory(aligned)
+elseif(EMC_STD_DMA_MALLOC STREQUAL "UTA")
+  add_subdirectory(uta)
+elseif(EMC_STD_DMA_MALLOC STREQUAL "tlsf")
+  add_subdirectory(tlsf)
+elseif(EMC_STD_DMA_MALLOC STREQUAL "NONE")
+else()
+endif()
+

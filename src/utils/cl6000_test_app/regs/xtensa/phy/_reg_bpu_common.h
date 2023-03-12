@@ -1,0 +1,6 @@
+#ifndef __REG_BPU_COMMON_H_
+#define __REG_BPU_COMMON_H_
+
+#define REG_BPU_COMMON_BASE_ADDR 0x604AA000
+
+#endif //__REG_BPU_COMMON_H_

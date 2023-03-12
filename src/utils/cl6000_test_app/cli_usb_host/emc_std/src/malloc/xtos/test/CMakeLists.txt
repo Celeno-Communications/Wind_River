@@ -1,0 +1,16 @@
+add_executable(ia_sue_fragmentation_test "fragmentation_test.cpp")
+target_link_libraries(ia_sue_fragmentation_test PRIVATE external_sue emcpp_test)
+eme_add_test(ia_sue_fragmentation_test)
+
+add_executable(emc_std_integration_test "emc_std_integration_test.cpp")
+target_link_libraries(emc_std_integration_test PRIVATE emc_std emcpp_test)
+eme_add_test(emc_std_integration_test)
+
+add_executable(emcpp_std_integration_test "emcpp_std_integration_test.cpp")
+target_link_libraries(emcpp_std_integration_test PRIVATE emcpp_std emcpp_test)
+eme_add_test(emcpp_std_integration_test)
+
+add_executable(emc_usb_driver_integration_test "emc_usb_driver_integration_test.cpp")
+target_link_libraries(emc_usb_driver_integration_test PRIVATE emc_usb_driver emc_std emcpp_test)
+eme_add_test(emc_usb_driver_integration_test)
+

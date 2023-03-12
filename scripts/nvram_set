@@ -1,0 +1,63 @@
+#!/bin/sh
+
+NVRAM_LOCK=/tmp/nvram_set_lock_$1
+
+mkdir $NVRAM_LOCK > /dev/null
+if [ $? -ne 0 ]
+then
+	count=0
+	while [ -d "$NVRAM_LOCK" ]
+	do
+		sleep 1
+		count=`expr $count + 1`
+		if [ $count -eq 20 ]
+		then
+			break
+		fi
+	done
+	mkdir $NVRAM_LOCK > /dev/null
+fi
+
+# test to see that environment settings exist
+if [ ! -f $cl_install_dir/scripts/env.sh ]
+then
+	echo "env.sh missing, please make sure that cl_cfg_dir and cl_install_dir are set properly ..."
+	rm -rf $NVRAM_LOCK
+	exit 1
+else
+	. $cl_install_dir/scripts/env.sh
+fi
+
+case "$1" in
+	"chip0"|"chip1"|"chip2"|"chip3"|"tcv0"|"tcv2"|"tcv4"|"tcv6"|"chip0_bt"|"chip1_bt"|"chip2_bt"|"chip3_bt")
+		DAT_FILE="$cl_cfg_dir/cl_$1.dat"
+	;;
+	*)
+		echo "usage: nvram_set [chip0|chip1|chip2|chip3|tcv0|tcv2|tcv4|tcv6|chip0_bt|chip1_bt|chip2_bt|chip3_bt] [Key] [Value]"
+		rm -rf $NVRAM_LOCK
+		exit 1
+	;;
+esac
+
+if [ ! -f $DAT_FILE ]
+then
+    $cl_install_dir/scripts/restore_defaults.sh "$1"
+fi
+if ! grep -q "^$2=" $DAT_FILE ; then
+    #param $2 not found, adding it to $DAT_FILE file
+    echo "$2=$3" >> $DAT_FILE
+    rm -rf $NVRAM_LOCK
+    exit 0
+fi
+
+match="$(echo "$3" | sed -e "s#[/\\&^$+*.]#\\\&#g" -e "s/\]/\\\]/g" -e "s/\[/\\\[/g")"
+if grep -q "^$2=$match\$" $DAT_FILE ; then
+    #param and its value already exist, no need to change anything, returning result=2
+    rm -rf $NVRAM_LOCK
+    exit 2
+fi
+#replace old value of parameter $2 with new value $3
+val="$(echo "$3" | sed -e "s#[/\&]#\\\&#g")"
+sed -i "s/\(^$2=\).*/\1$val/" $DAT_FILE
+
+rm -rf $NVRAM_LOCK

@@ -1,0 +1,1 @@
+0x4002FF08 0x3 # select bt-only profile

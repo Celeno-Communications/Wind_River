@@ -1,0 +1,6 @@
+#ifndef __REG_RFIC_REGS_H_
+#define __REG_RFIC_REGS_H_
+
+#define REG_RFIC_REGS_BASE_ADDR 0x604B4000
+
+#endif //__REG_RFIC_REGS_H_

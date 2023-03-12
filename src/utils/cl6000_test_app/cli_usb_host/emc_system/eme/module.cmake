@@ -1,0 +1,1 @@
+eme_add_prerequisites(emc_hw)

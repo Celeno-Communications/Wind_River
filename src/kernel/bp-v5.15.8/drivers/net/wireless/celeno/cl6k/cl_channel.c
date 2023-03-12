@@ -1,0 +1,296 @@
+// SPDX-License-Identifier: GPL-2.0 OR BSD-2-Clause
+/* Copyright(c) 2019-2021, Celeno Communications Ltd. */
+
+#include "cl_channel.h"
+#include "cl_band.h"
+
+#define CASE_CHAN2IDX_6G(_chan) { case _chan: return (b6g_ch ## _chan); }
+#define CASE_CHAN2IDX_5G(_chan) { case _chan: return (b5g_ch ## _chan); }
+#define CASE_CHAN2IDX_2G(_chan) { case _chan: return (b24g_ch ## _chan); }
+
+#define CASE_IDX2FREQ_6G(_chan) { case (b6g_ch ## _chan): return FREQ6G(_chan); }
+#define CASE_IDX2FREQ_5G(_chan) { case (b5g_ch ## _chan): return FREQ5G(_chan); }
+#define CASE_IDX2FREQ_2G(_chan) { case (b24g_ch ## _chan): return FREQ2G(_chan); }
+
+#define INVALID_FREQ 0xffff
+
+u32 cl_ch_idx_to_channel(struct cl_hw *cl_hw, u8 ch_idx)
+{
+	if (ch_idx >= MAX_CHANNELS)
+		return 0;
+
+	return cl_hw->channel_info.channels[0][ch_idx].channel;
+}
+
+u8 cl_channel_to_index(struct cl_hw *cl_hw, u32 channel)
+{
+	/* Calculate bitmap index (currently 0-72) for a given channel */
+	if (cl_band_is_6g(cl_hw)) {
+		switch (channel) {
+		CASE_CHAN2IDX_6G(1);
+		CASE_CHAN2IDX_6G(2);
+		CASE_CHAN2IDX_6G(5);
+		CASE_CHAN2IDX_6G(9);
+		CASE_CHAN2IDX_6G(13);
+		CASE_CHAN2IDX_6G(17);
+		CASE_CHAN2IDX_6G(21);
+		CASE_CHAN2IDX_6G(25);
+		CASE_CHAN2IDX_6G(29);
+		CASE_CHAN2IDX_6G(33);
+		CASE_CHAN2IDX_6G(37);
+		CASE_CHAN2IDX_6G(41);
+		CASE_CHAN2IDX_6G(45);
+		CASE_CHAN2IDX_6G(49);
+		CASE_CHAN2IDX_6G(53);
+		CASE_CHAN2IDX_6G(57);
+		CASE_CHAN2IDX_6G(61);
+		CASE_CHAN2IDX_6G(65);
+		CASE_CHAN2IDX_6G(69);
+		CASE_CHAN2IDX_6G(73);
+		CASE_CHAN2IDX_6G(77);
+		CASE_CHAN2IDX_6G(81);
+		CASE_CHAN2IDX_6G(85);
+		CASE_CHAN2IDX_6G(89);
+		CASE_CHAN2IDX_6G(93);
+		CASE_CHAN2IDX_6G(97);
+		CASE_CHAN2IDX_6G(101);
+		CASE_CHAN2IDX_6G(105);
+		CASE_CHAN2IDX_6G(109);
+		CASE_CHAN2IDX_6G(113);
+		CASE_CHAN2IDX_6G(117);
+		CASE_CHAN2IDX_6G(121);
+		CASE_CHAN2IDX_6G(125);
+		CASE_CHAN2IDX_6G(129);
+		CASE_CHAN2IDX_6G(133);
+		CASE_CHAN2IDX_6G(137);
+		CASE_CHAN2IDX_6G(141);
+		CASE_CHAN2IDX_6G(145);
+		CASE_CHAN2IDX_6G(149);
+		CASE_CHAN2IDX_6G(153);
+		CASE_CHAN2IDX_6G(157);
+		CASE_CHAN2IDX_6G(161);
+		CASE_CHAN2IDX_6G(165);
+		CASE_CHAN2IDX_6G(169);
+		CASE_CHAN2IDX_6G(173);
+		CASE_CHAN2IDX_6G(177);
+		CASE_CHAN2IDX_6G(181);
+		CASE_CHAN2IDX_6G(185);
+		CASE_CHAN2IDX_6G(189);
+		CASE_CHAN2IDX_6G(193);
+		CASE_CHAN2IDX_6G(197);
+		CASE_CHAN2IDX_6G(201);
+		CASE_CHAN2IDX_6G(205);
+		CASE_CHAN2IDX_6G(209);
+		CASE_CHAN2IDX_6G(213);
+		CASE_CHAN2IDX_6G(217);
+		CASE_CHAN2IDX_6G(221);
+		CASE_CHAN2IDX_6G(225);
+		CASE_CHAN2IDX_6G(229);
+		CASE_CHAN2IDX_6G(233);
+		};
+	} else if (cl_band_is_5g(cl_hw)) {
+		switch (channel) {
+		CASE_CHAN2IDX_5G(36);
+		CASE_CHAN2IDX_5G(40);
+		CASE_CHAN2IDX_5G(44);
+		CASE_CHAN2IDX_5G(48);
+		CASE_CHAN2IDX_5G(52);
+		CASE_CHAN2IDX_5G(56);
+		CASE_CHAN2IDX_5G(60);
+		CASE_CHAN2IDX_5G(64);
+		CASE_CHAN2IDX_5G(100);
+		CASE_CHAN2IDX_5G(104);
+		CASE_CHAN2IDX_5G(108);
+		CASE_CHAN2IDX_5G(112);
+		CASE_CHAN2IDX_5G(116);
+		CASE_CHAN2IDX_5G(120);
+		CASE_CHAN2IDX_5G(124);
+		CASE_CHAN2IDX_5G(128);
+		/* 130 - invalid */
+		CASE_CHAN2IDX_5G(132);
+		CASE_CHAN2IDX_5G(136);
+		CASE_CHAN2IDX_5G(140);
+		CASE_CHAN2IDX_5G(144);
+		CASE_CHAN2IDX_5G(149);
+		CASE_CHAN2IDX_5G(153);
+		CASE_CHAN2IDX_5G(157);
+		CASE_CHAN2IDX_5G(161);
+		/* 163 - invalid */
+		CASE_CHAN2IDX_5G(165);
+		};
+	} else {
+		switch (channel) {
+		CASE_CHAN2IDX_2G(1);
+		CASE_CHAN2IDX_2G(2);
+		CASE_CHAN2IDX_2G(3);
+		CASE_CHAN2IDX_2G(4);
+		CASE_CHAN2IDX_2G(5);
+		CASE_CHAN2IDX_2G(6);
+		CASE_CHAN2IDX_2G(7);
+		CASE_CHAN2IDX_2G(8);
+		CASE_CHAN2IDX_2G(9);
+		CASE_CHAN2IDX_2G(10);
+		CASE_CHAN2IDX_2G(11);
+		CASE_CHAN2IDX_2G(12);
+		CASE_CHAN2IDX_2G(13);
+		CASE_CHAN2IDX_2G(14);
+		};
+	}
+
+	return INVALID_CHAN_IDX;
+}
+
+u16 cl_channel_idx_to_freq(struct cl_hw *cl_hw, u8 index)
+{
+	/* Calculate frequency of a given idnex used for interpolation */
+	if (cl_band_is_6g(cl_hw)) {
+		switch (index) {
+		CASE_IDX2FREQ_6G(1);
+		CASE_IDX2FREQ_6G(2);
+		CASE_IDX2FREQ_6G(5);
+		CASE_IDX2FREQ_6G(9);
+		CASE_IDX2FREQ_6G(13);
+		CASE_IDX2FREQ_6G(17);
+		CASE_IDX2FREQ_6G(21);
+		CASE_IDX2FREQ_6G(25);
+		CASE_IDX2FREQ_6G(29);
+		CASE_IDX2FREQ_6G(33);
+		CASE_IDX2FREQ_6G(37);
+		CASE_IDX2FREQ_6G(41);
+		CASE_IDX2FREQ_6G(45);
+		CASE_IDX2FREQ_6G(49);
+		CASE_IDX2FREQ_6G(53);
+		CASE_IDX2FREQ_6G(57);
+		CASE_IDX2FREQ_6G(61);
+		CASE_IDX2FREQ_6G(65);
+		CASE_IDX2FREQ_6G(69);
+		CASE_IDX2FREQ_6G(73);
+		CASE_IDX2FREQ_6G(77);
+		CASE_IDX2FREQ_6G(81);
+		CASE_IDX2FREQ_6G(85);
+		CASE_IDX2FREQ_6G(89);
+		CASE_IDX2FREQ_6G(93);
+		CASE_IDX2FREQ_6G(97);
+		CASE_IDX2FREQ_6G(101);
+		CASE_IDX2FREQ_6G(105);
+		CASE_IDX2FREQ_6G(109);
+		CASE_IDX2FREQ_6G(113);
+		CASE_IDX2FREQ_6G(117);
+		CASE_IDX2FREQ_6G(121);
+		CASE_IDX2FREQ_6G(125);
+		CASE_IDX2FREQ_6G(129);
+		CASE_IDX2FREQ_6G(133);
+		CASE_IDX2FREQ_6G(137);
+		CASE_IDX2FREQ_6G(141);
+		CASE_IDX2FREQ_6G(145);
+		CASE_IDX2FREQ_6G(149);
+		CASE_IDX2FREQ_6G(153);
+		CASE_IDX2FREQ_6G(157);
+		CASE_IDX2FREQ_6G(161);
+		CASE_IDX2FREQ_6G(165);
+		CASE_IDX2FREQ_6G(169);
+		CASE_IDX2FREQ_6G(173);
+		CASE_IDX2FREQ_6G(177);
+		CASE_IDX2FREQ_6G(181);
+		CASE_IDX2FREQ_6G(185);
+		CASE_IDX2FREQ_6G(189);
+		CASE_IDX2FREQ_6G(193);
+		CASE_IDX2FREQ_6G(197);
+		CASE_IDX2FREQ_6G(201);
+		CASE_IDX2FREQ_6G(205);
+		CASE_IDX2FREQ_6G(209);
+		CASE_IDX2FREQ_6G(213);
+		CASE_IDX2FREQ_6G(217);
+		CASE_IDX2FREQ_6G(221);
+		CASE_IDX2FREQ_6G(225);
+		CASE_IDX2FREQ_6G(229);
+		CASE_IDX2FREQ_6G(233);
+		};
+	} else if (cl_band_is_5g(cl_hw)) {
+		switch (index) {
+		CASE_IDX2FREQ_5G(36);
+		CASE_IDX2FREQ_5G(40);
+		CASE_IDX2FREQ_5G(44);
+		CASE_IDX2FREQ_5G(48);
+		CASE_IDX2FREQ_5G(52);
+		CASE_IDX2FREQ_5G(56);
+		CASE_IDX2FREQ_5G(60);
+		CASE_IDX2FREQ_5G(64);
+		CASE_IDX2FREQ_5G(100);
+		CASE_IDX2FREQ_5G(104);
+		CASE_IDX2FREQ_5G(108);
+		CASE_IDX2FREQ_5G(112);
+		CASE_IDX2FREQ_5G(116);
+		CASE_IDX2FREQ_5G(120);
+		CASE_IDX2FREQ_5G(124);
+		CASE_IDX2FREQ_5G(128);
+		CASE_IDX2FREQ_5G(132);
+		CASE_IDX2FREQ_5G(136);
+		CASE_IDX2FREQ_5G(140);
+		CASE_IDX2FREQ_5G(144);
+		CASE_IDX2FREQ_5G(149);
+		CASE_IDX2FREQ_5G(153);
+		CASE_IDX2FREQ_5G(157);
+		CASE_IDX2FREQ_5G(161);
+		CASE_IDX2FREQ_5G(165);
+		};
+	} else {
+		switch (index) {
+		CASE_IDX2FREQ_2G(1);
+		CASE_IDX2FREQ_2G(2);
+		CASE_IDX2FREQ_2G(3);
+		CASE_IDX2FREQ_2G(4);
+		CASE_IDX2FREQ_2G(5);
+		CASE_IDX2FREQ_2G(6);
+		CASE_IDX2FREQ_2G(7);
+		CASE_IDX2FREQ_2G(8);
+		CASE_IDX2FREQ_2G(9);
+		CASE_IDX2FREQ_2G(10);
+		CASE_IDX2FREQ_2G(11);
+		CASE_IDX2FREQ_2G(12);
+		CASE_IDX2FREQ_2G(13);
+		CASE_IDX2FREQ_2G(14);
+		};
+	}
+
+	return INVALID_FREQ;
+}
+
+bool cl_channel_is_valid(struct cl_hw *cl_hw, u8 channel)
+{
+	if (cl_band_is_24g(cl_hw)) {
+		return (channel > 0 && channel <= 14);
+	} else if (cl_band_is_5g(cl_hw)) {
+		if (channel >= 36 && channel <= 64)
+			return ((channel & 0x1) == 0x0);
+
+		if (channel >= 100 && channel <= 144)
+			return ((channel & 0x1) == 0x0);
+
+		if (channel >= 149 && channel <= 161)
+			return ((channel & 0x1) == 0x1);
+
+		if (channel == 165)
+			return true;
+	} else {
+		if (channel == 2)
+			return true;
+
+		if (channel >= 1 && channel <= 233)
+			if ((channel & 0x3) == 0x1)
+				return true;
+	}
+
+	return false;
+}
+
+u32 cl_channel_num(struct cl_hw *cl_hw)
+{
+	if (cl_hw->conf->ci_band_num == 6)
+		return NUM_CHANNELS_6G;
+
+	if (cl_hw->conf->ci_band_num == 5)
+		return NUM_CHANNELS_5G;
+
+	return NUM_CHANNELS_24G;
+}

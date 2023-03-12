@@ -1,0 +1,4 @@
+add_executable(EmcHwStaticMemoryPoolTest EmcHwStaticMemoryPoolTest.cpp)
+target_link_libraries(EmcHwStaticMemoryPoolTest PRIVATE emc_hw_memory_test)
+eme_add_test(EmcHwStaticMemoryPoolTest)
+

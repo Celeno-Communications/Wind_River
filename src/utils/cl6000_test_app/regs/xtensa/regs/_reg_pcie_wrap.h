@@ -1,0 +1,6 @@
+#ifndef __REG_PCIE_WRAP_H_
+#define __REG_PCIE_WRAP_H_
+
+#define REG_PCIE_WRAP_BASE_ADDR 0x607C2000
+
+#endif //__REG_PCIE_WRAP_H_
